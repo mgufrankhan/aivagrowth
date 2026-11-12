@@ -77,7 +77,7 @@ Each route sets its own title, description, and canonical URL under `https://aiv
 
 ## Production
 
-Responses send a content security policy, `X-Frame-Options: DENY`, `nosniff`, a strict referrer policy, and a locked-down permissions policy. HTTPS and HSTS stay with the host so a local production server on `http://localhost` is not forced onto HTTPS.
+Responses send a content security policy, `nosniff`, a strict referrer policy, and a locked-down permissions policy. The policy allows Vercel to embed the deployment preview. Other sites cannot frame the pages. HTTPS and HSTS stay with the host so a local production server on `http://localhost` is not forced onto HTTPS.
 
 On production startup the server logs a warning when `FORM_DELIVERY` cannot actually deliver, and when `CONTACT_EMAIL` is empty. Request failures are logged with the method, path, and error digest. Inquiry contents are not written to the log.
 
