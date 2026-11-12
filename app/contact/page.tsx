@@ -32,8 +32,8 @@ export default function ContactPage() {
           <aside className="space-y-4">
             <h2 className="text-xl font-semibold text-navy">What happens next</h2>
             <p className="text-sm leading-6 text-muted">
-              The form delivers an inquiry only when this site has a configured email, database, or webhook. If you
-              are looking at a development copy, the notice on the form says the message stays on this machine.
+              The form delivers an inquiry only when this site has a configured email, database, or webhook. If that
+              destination is missing, the form says so and does not show a success confirmation.
             </p>
             <p className="text-sm leading-6 text-muted">
               A follow-up is not automatic. It depends on someone reading the destination that was configured for{" "}

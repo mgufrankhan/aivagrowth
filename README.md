@@ -73,7 +73,15 @@ Leave `NEXT_PUBLIC_ANALYTICS_ID` and `NEXT_PUBLIC_ANALYTICS_SRC` empty to ship w
 
 ## SEO
 
-Each route sets its own title, description, and canonical URL under `https://aivagrowth.com`. `app/sitemap.ts` and `app/robots.ts` generate the sitemap and robots file. Draft privacy and terms pages are `noindex` until counsel replaces them. Organization and software structured data include only the name, URL, and description. They omit reviews, ratings, prices, logo, and social profiles.
+Each route sets its own title, description, and canonical URL under `https://aivagrowth.com`. `app/sitemap.ts` and `app/robots.ts` generate the sitemap and robots file. Draft privacy and terms pages are `noindex` until counsel replaces them. Organization structured data includes the name, URL, description, and logo. It omits reviews, ratings, prices, and social profiles.
+
+## Production
+
+Responses send a content security policy, `X-Frame-Options: DENY`, `nosniff`, a strict referrer policy, and a locked-down permissions policy. HTTPS and HSTS stay with the host so a local production server on `http://localhost` is not forced onto HTTPS.
+
+On production startup the server logs a warning when `FORM_DELIVERY` cannot actually deliver, and when `CONTACT_EMAIL` is empty. Request failures are logged with the method, path, and error digest. Inquiry contents are not written to the log.
+
+`npm run build` still succeeds without those variables. A deployed site with no delivery destination keeps the form on screen and refuses the submission. Set the host environment from `.env.example` before expecting inquiries to arrive. The host should terminate TLS for `aivagrowth.com`. Items that still need a confirmed business or legal decision stay in `LAUNCH_CHECKLIST.md`.
 
 ## Deploy
 
