@@ -97,7 +97,7 @@ export function DemoForm({
   return (
     <form
       id="demo"
-      className="scroll-mt-28 rounded-3xl border border-line bg-white p-6 shadow-[0_1px_2px_rgba(7,26,67,0.04)] sm:p-8"
+      className="panel scroll-mt-28 p-6 sm:p-8"
       onSubmit={handleSubmit(onSubmit)}
       noValidate
     >

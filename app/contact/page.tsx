@@ -29,7 +29,7 @@ export default function ContactPage() {
       />
       <Section>
         <Container className="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
-          <aside className="space-y-4">
+          <aside className="panel h-fit space-y-4 p-6">
             <h2 className="text-xl font-semibold text-navy">What happens next</h2>
             <p className="text-sm leading-6 text-muted">
               The form delivers an inquiry only when this site has a configured email, database, or webhook. If that

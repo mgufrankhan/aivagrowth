@@ -12,8 +12,10 @@ export function CTASection({
   return (
     <section className="pb-16 sm:pb-20" aria-labelledby="final-cta-title">
       <Container>
-        <div className="overflow-hidden rounded-3xl bg-navy px-6 py-10 text-white sm:px-10 sm:py-12">
-          <div className="max-w-2xl">
+        <div className="relative overflow-hidden rounded-[2rem] bg-navy px-6 py-12 text-white sm:px-12 sm:py-14">
+          <div className="pointer-events-none absolute -right-16 -top-24 h-64 w-64 rounded-full bg-blue/50 blur-3xl" aria-hidden="true" />
+          <div className="pointer-events-none absolute -bottom-16 left-8 h-40 w-56 rounded-full bg-orange/30 blur-3xl" aria-hidden="true" />
+          <div className="relative max-w-2xl">
             <p className="h-1.5 w-12 rounded-full bg-orange" aria-hidden="true" />
             <h2 id="final-cta-title" className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
               {title}

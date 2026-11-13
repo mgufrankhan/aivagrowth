@@ -2,7 +2,7 @@ import { ShieldCheck } from "lucide-react";
 
 export function ApprovalNote() {
   return (
-    <aside className="rounded-2xl border border-line bg-lavender p-5 sm:p-6">
+    <aside className="rounded-2xl border border-blue/15 bg-lavender p-5 shadow-[0_18px_44px_-32px_rgba(7,26,67,0.55)] sm:p-6">
       <div className="flex gap-3">
         <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-blue" aria-hidden="true" />
         <div>

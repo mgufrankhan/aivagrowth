@@ -22,7 +22,7 @@ export function DashboardPreview() {
   }
 
   return (
-    <figure className="overflow-hidden rounded-3xl border border-line bg-white shadow-[0_30px_80px_-36px_rgba(7,26,67,0.55)]">
+    <figure className="overflow-hidden rounded-[1.6rem] border border-white/70 bg-white shadow-[0_30px_80px_-36px_rgba(7,26,67,0.65)] ring-1 ring-navy/5">
       <figcaption className="sr-only">
         Illustrative product preview using sample data. It is not a live customer dashboard and the figures are not
         performance claims.

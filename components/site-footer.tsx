@@ -12,6 +12,7 @@ export function SiteFooter() {
 
   return (
     <footer className="bg-navy text-white">
+      <div className="h-1 bg-gradient-to-r from-orange via-blue to-cyan" aria-hidden="true" />
       <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2 lg:col-span-1">
           <BrandLockup tone="inverse" />

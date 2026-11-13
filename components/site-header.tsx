@@ -48,7 +48,7 @@ function HeaderControls({ pathname }: { pathname: string }) {
   }, [agentsOpen]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-line/80 bg-white/80 shadow-[0_12px_30px_-24px_rgba(7,26,67,0.7)] backdrop-blur-md">
       <Container className="flex h-[var(--header-height)] items-center justify-between gap-3">
         <Link href="/" aria-label="AIVAgrowth home" className="rounded-md">
           <BrandLockup />
@@ -60,8 +60,8 @@ function HeaderControls({ pathname }: { pathname: string }) {
                 <button
                   type="button"
                   className={cn(
-                    "inline-flex min-h-11 items-center gap-1 rounded-full px-3 text-sm font-medium text-navy hover:bg-background",
-                    pathname.startsWith("/ai-agents") && "text-blue",
+                    "inline-flex min-h-11 items-center gap-1 rounded-full px-3 text-sm font-medium hover:bg-background",
+                    pathname.startsWith("/ai-agents") ? "bg-lavender text-blue" : "text-navy",
                   )}
                   aria-expanded={agentsOpen}
                   aria-controls={menuId}
@@ -102,8 +102,8 @@ function HeaderControls({ pathname }: { pathname: string }) {
                 href={item.href}
                 aria-current={pathname === item.href ? "page" : undefined}
                 className={cn(
-                  "inline-flex min-h-11 items-center rounded-full px-3 text-sm font-medium text-navy hover:bg-background",
-                  pathname === item.href && "text-blue",
+                  "inline-flex min-h-11 items-center rounded-full px-3 text-sm font-medium hover:bg-background",
+                  pathname === item.href ? "bg-lavender text-blue" : "text-navy",
                 )}
               >
                 {item.label}
@@ -132,7 +132,7 @@ function HeaderControls({ pathname }: { pathname: string }) {
 
 export function HeaderFallback() {
   return (
-    <div className="h-[var(--header-height)] border-b border-line bg-white">
+    <div className="h-[var(--header-height)] border-b border-line/80 bg-white/80 shadow-[0_12px_30px_-24px_rgba(7,26,67,0.7)] backdrop-blur-md">
       <Container className="flex h-full items-center">
         <BrandLockup />
       </Container>

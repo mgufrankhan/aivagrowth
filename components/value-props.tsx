@@ -5,7 +5,7 @@ export function ValueProps() {
   return (
     <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {valuePoints.map((point) => (
-        <li key={point.id} className="rounded-2xl border border-line bg-white p-5">
+        <li key={point.id} className="panel p-5">
           <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-lavender text-blue">
             <ValueIcon id={point.id} />
           </span>

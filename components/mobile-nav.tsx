@@ -2,12 +2,15 @@
 
 import { X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/button";
 import { agentNav, primaryNav } from "@/data/navigation";
 import { ctaLabel } from "@/data/site";
+import { cn } from "@/lib/utils";
 
 export function MobileNav({ onClose }: { onClose: () => void }) {
+  const pathname = usePathname();
   const panelRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
 
@@ -82,7 +85,11 @@ export function MobileNav({ onClose }: { onClose: () => void }) {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="block rounded-xl px-3 py-3 text-base font-semibold text-navy hover:bg-background"
+                  aria-current={pathname === item.href ? "page" : undefined}
+                  className={cn(
+                    "block rounded-xl px-3 py-3 text-base font-semibold hover:bg-background",
+                    pathname === item.href ? "bg-lavender text-blue" : "text-navy",
+                  )}
                   onClick={onClose}
                 >
                   {item.label}

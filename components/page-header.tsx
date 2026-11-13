@@ -16,10 +16,14 @@ export function PageHeader({
   children?: ReactNode;
 }) {
   return (
-    <header className="border-b border-line bg-white">
-      <Container className="py-12 sm:py-16">
+    <header className="relative overflow-hidden border-b border-line bg-white">
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(18,101,245,0.12),transparent_52%)]"
+        aria-hidden="true"
+      />
+      <Container className="relative py-12 sm:py-16">
         <PageBreadcrumbs items={crumbs} />
-        <p className="inline-flex items-center gap-2 text-sm font-semibold text-blue">
+        <p className="inline-flex items-center gap-2 rounded-full border border-blue/15 bg-white px-3 py-1 text-sm font-semibold text-blue shadow-sm">
           <span className="h-1.5 w-1.5 rounded-full bg-orange" aria-hidden="true" />
           {eyebrow}
         </p>
