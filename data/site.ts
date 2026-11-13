@@ -22,11 +22,11 @@ export const brandAssets: {
 } = {
   markSrc: null,
   wordmarkSrc: "/aiva_logo.png",
-  wordmarkWidth: 2014,
-  wordmarkHeight: 403,
+  wordmarkWidth: 1685,
+  wordmarkHeight: 618,
   inverseWordmarkSrc: "/aiva_logo_dark_bg.png",
-  inverseWordmarkWidth: 1989,
-  inverseWordmarkHeight: 401,
+  inverseWordmarkWidth: 1698,
+  inverseWordmarkHeight: 617,
 };
 
 function resolveCtaMode(value: string | undefined): CtaMode {

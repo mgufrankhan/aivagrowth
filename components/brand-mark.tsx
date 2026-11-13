@@ -52,9 +52,9 @@ function LockupImage({
       width={width}
       height={height}
       priority={priority}
-      sizes="240px"
-      className="h-11 w-auto"
-      style={{ height: "2.75rem", width: "auto" }}
+      sizes="280px"
+      className="h-16 w-auto"
+      style={{ height: "4rem", width: "auto" }}
     />
   );
 }
