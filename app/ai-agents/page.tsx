@@ -19,7 +19,7 @@ export default function AgentsPage() {
       <PageHeader
         eyebrow="AI agents"
         title="What each agent helps you produce."
-        description="Plain-English summaries of outputs for everyday marketing and sales work. Status badges reflect verified readiness. Agents are platform capabilities and are not automatically included in every plan."
+        description="Six agents are live on the Growth plan. Performance Marketing and WhatsApp are in pilot. Status badges show readiness for each workflow."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "AI Agents", path: "/ai-agents" },

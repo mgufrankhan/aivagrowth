@@ -16,6 +16,13 @@ export function OfferChoice() {
           <p className="mt-4 text-3xl font-semibold tracking-tight text-navy">{offerPrice(offers.selfService)}</p>
           <h3 className="mt-3 text-xl font-semibold tracking-tight text-navy">{offers.selfService.title}</h3>
           <p className="mt-3 text-sm leading-6 text-muted sm:text-base">{offers.selfService.body}</p>
+          <ul className="mt-5 space-y-2">
+            {offers.selfService.details.map((item) => (
+              <li key={item} className="text-sm font-medium text-navy">
+                {item}
+              </li>
+            ))}
+          </ul>
           <div className="mt-6">
             <Button href={contactHref(offers.selfService.contactInterest)}>{offers.selfService.ctaLabel}</Button>
           </div>
@@ -25,6 +32,13 @@ export function OfferChoice() {
           <p className="mt-4 text-3xl font-semibold tracking-tight text-navy">{offerPrice(offers.managed)}</p>
           <h3 className="mt-3 text-xl font-semibold tracking-tight text-navy">{offers.managed.title}</h3>
           <p className="mt-3 text-sm leading-6 text-muted sm:text-base">{offers.managed.body}</p>
+          <ul className="mt-5 space-y-2">
+            {offers.managed.details.map((item) => (
+              <li key={item} className="text-sm font-medium text-navy">
+                {item}
+              </li>
+            ))}
+          </ul>
           <div className="mt-6">
             <Button href={contactHref(offers.managed.contactInterest)}>{offers.managed.ctaLabel}</Button>
           </div>
@@ -42,6 +56,7 @@ export function PricingCards() {
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue">
           {offers.selfService.pricingLabel}
         </p>
+        <p className="mt-2 text-sm font-semibold text-navy">{offers.selfService.planName} plan</p>
         <p className="mt-4 text-3xl font-semibold tracking-tight text-navy">{offerPrice(offers.selfService)}</p>
         <p className="mt-2 text-sm text-muted">{pricingConfirmation}</p>
         <p className="mt-4 text-base leading-7 text-muted">{offers.selfService.pricingAudience}</p>
@@ -50,14 +65,22 @@ export function PricingCards() {
           <ComparisonRow label="Main value" value={offers.selfService.mainValue} />
           <ComparisonRow label="Setup" value={offers.selfService.setup} />
           <ComparisonRow label="Approval" value={offers.selfService.approval} />
-          <ComparisonRow label="Scope" value={offers.selfService.scope} />
+          <ComparisonRow label="Package" value={offers.selfService.scope} />
         </dl>
+        <ul className="mt-6 space-y-2">
+          {offers.selfService.inclusions.map((item) => (
+            <li key={item} className="text-sm leading-6 text-navy">
+              {item}
+            </li>
+          ))}
+        </ul>
         <div className="mt-6">
           <Button href={contactHref(offers.selfService.contactInterest)}>{offers.selfService.ctaLabel}</Button>
         </div>
       </article>
       <article id="managed" className="scroll-mt-28 rounded-2xl border border-line bg-white p-6 sm:p-8">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue">{offers.managed.pricingLabel}</p>
+        <p className="mt-2 text-sm font-semibold text-navy">{offers.managed.planName} plan</p>
         <p className="mt-4 text-3xl font-semibold tracking-tight text-navy">{offerPrice(offers.managed)}</p>
         <p className="mt-2 text-sm text-muted">{pricingConfirmation}</p>
         <p className="mt-4 text-base leading-7 text-muted">{offers.managed.pricingAudience}</p>
@@ -66,8 +89,15 @@ export function PricingCards() {
           <ComparisonRow label="Main value" value={offers.managed.mainValue} />
           <ComparisonRow label="Setup" value={offers.managed.setup} />
           <ComparisonRow label="Approval" value={offers.managed.approval} />
-          <ComparisonRow label="Scope" value={offers.managed.scope} />
+          <ComparisonRow label="Package" value={offers.managed.scope} />
         </dl>
+        <ul className="mt-6 space-y-2">
+          {offers.managed.inclusions.map((item) => (
+            <li key={item} className="text-sm leading-6 text-navy">
+              {item}
+            </li>
+          ))}
+        </ul>
         <div className="mt-6">
           <Button href={contactHref(offers.managed.contactInterest)}>{offers.managed.ctaLabel}</Button>
         </div>

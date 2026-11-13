@@ -3,9 +3,10 @@ import { AgentGrid } from "@/components/agent-grid";
 import { Button } from "@/components/button";
 import { Container, Section } from "@/components/container";
 import { CTASection } from "@/components/cta-section";
-import { DashboardPreview } from "@/components/dashboard-preview";
+import { IntegrationGrid } from "@/components/integration-grid";
 import { PageHeader } from "@/components/page-header";
-import { contactHref, offers, platformUseCases } from "@/data/offers";
+import { ProductScreenshots } from "@/components/product-screenshots";
+import { contactHref, offers } from "@/data/offers";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
@@ -36,32 +37,26 @@ export default function PlatformPage() {
         <Container>
           <h2 className="text-3xl font-semibold tracking-tight text-navy">See the workspace</h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-muted">
-            No verified product screenshots are in this repository yet. The preview below is an accurately labeled
-            illustrative sample, not a live customer dashboard. TODO: replace with verified screenshots of overview,
-            agents, content calendar, leads, inbox, and analytics.
+            Product screenshots of the AIVA Growth workspace: overview, agents, content calendar, leads, inbox, and
+            analytics.
           </p>
-          <div className="mt-10">
-            <DashboardPreview />
-          </div>
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {platformUseCases.map((item) => (
-              <li key={item.title} className="rounded-2xl border border-line bg-white p-5">
-                <h3 className="text-lg font-semibold text-navy">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-muted">{item.caption}</p>
-              </li>
-            ))}
-          </ul>
+          <ProductScreenshots />
         </Container>
       </Section>
       <Section className="border-y border-line bg-white">
         <Container>
           <h2 className="text-3xl font-semibold tracking-tight text-navy">Practical use cases</h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-muted">
-            Use the Self-Service AI Platform when your team wants to operate the agents. The same software also powers
-            Fully Managed engagements. Available features and integrations depend on current product readiness.
+            Use the Self-Service Growth plan when your team wants to operate the agents. The same software powers Fully
+            Managed engagements. The Growth plan includes six live agents, two pilot agents, and the live channels listed
+            below.
           </p>
           <div className="mt-6">
             <ApprovalNote />
+          </div>
+          <div className="mt-10">
+            <h3 className="text-xl font-semibold text-navy">Channels</h3>
+            <IntegrationGrid />
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button href={contactHref(offers.selfService.contactInterest)}>{offers.selfService.ctaLabel}</Button>
@@ -75,8 +70,8 @@ export default function PlatformPage() {
         <Container>
           <h2 className="text-3xl font-semibold tracking-tight text-navy">Agents inside the platform</h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-muted">
-            Eight workflows support everyday growth work. Open any card for outputs and safeguards. Agents are not
-            automatically included in every plan.
+            Six agents are live on the Growth plan. Performance Marketing and WhatsApp are in pilot. Open any card for
+            outputs and safeguards.
           </p>
           <AgentGrid />
         </Container>
@@ -85,7 +80,7 @@ export default function PlatformPage() {
         dual={false}
         primaryInterest="self-service"
         title="Request Platform Demo"
-        description="Tell us about your business. We will confirm which workflows and channels are available for Self-Service."
+        description="Tell us about your business. We will activate the Growth plan agents and connect your accounts."
       />
     </>
   );

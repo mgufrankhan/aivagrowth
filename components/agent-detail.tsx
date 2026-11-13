@@ -34,8 +34,8 @@ export function AgentDetail({ agent }: { agent: Agent }) {
               {agentReadinessLabel(agent.readiness)}
             </span>
             <p className="text-sm leading-6 text-muted">
-              Use this capability in your own workspace or discuss a managed workflow. Inclusion depends on the plan
-              confirmed during onboarding.
+              Use this capability in your own Growth workspace or discuss a managed workflow. Live agents are included
+              in Self-Service Growth; pilot agents are available with limited support.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">

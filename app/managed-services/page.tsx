@@ -50,7 +50,7 @@ export default function ManagedServicesPage() {
         <Container>
           <h2 className="text-3xl font-semibold tracking-tight text-navy">What we manage</h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-muted">
-            These are the service areas we can operate. They are not unlimited inclusions in the base price.
+            Managed Growth monthly package quantities are listed on each card. Extra volume is quoted separately.
           </p>
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {managedServices.map((item) => (

@@ -3,7 +3,7 @@
 import { MotionConfig, motion } from "motion/react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
-import { DashboardPreview } from "@/components/dashboard-preview";
+import Image from "next/image";
 import { offerPrice, offers } from "@/data/offers";
 import { siteConfig } from "@/data/site";
 
@@ -49,7 +49,19 @@ export function Hero() {
           </motion.div>
         </MotionConfig>
         <div className="relative min-w-0">
-          <DashboardPreview />
+          <figure className="overflow-hidden rounded-2xl border border-line bg-white shadow-[0_24px_50px_-36px_rgba(7,26,67,0.45)]">
+            <Image
+              src="/product/aiva-overview.jpg"
+              alt="AIVA Growth overview dashboard"
+              width={1600}
+              height={900}
+              className="h-auto w-full"
+              priority
+            />
+            <figcaption className="border-t border-line px-4 py-3 text-sm text-muted">
+              Product screenshot · Overview dashboard
+            </figcaption>
+          </figure>
         </div>
       </Container>
     </section>

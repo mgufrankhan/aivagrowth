@@ -1,12 +1,12 @@
 import { AgentGrid } from "@/components/agent-grid";
 import { Container, Section } from "@/components/container";
 import { CTASection } from "@/components/cta-section";
-import { DashboardPreview } from "@/components/dashboard-preview";
 import { FAQAccordion } from "@/components/faq-accordion";
 import { Hero } from "@/components/hero";
 import { ModelPaths } from "@/components/model-paths";
 import { OfferChoice } from "@/components/offer-choice";
 import { OutcomeProps } from "@/components/outcome-props";
+import { ProductScreenshots } from "@/components/product-screenshots";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/button";
 import { faqs } from "@/data/faqs";
@@ -31,7 +31,7 @@ export default function HomePage() {
             id="ways-heading"
             eyebrow="Two ways to work with us"
             title="Operate the platform yourself, or let us manage it."
-            description="Exactly two commercial options. Starting prices are shown below; final scope is confirmed before onboarding."
+            description="Exactly two commercial options. Growth starts at $149/month. Managed Growth starts at $799/month."
           />
           <OfferChoice />
         </Container>
@@ -53,11 +53,9 @@ export default function HomePage() {
             id="platform-heading"
             eyebrow="See the platform"
             title="One workspace for marketing and sales workflows."
-            description="The preview below is illustrative. Verified product screenshots will replace it when available."
+            description="Product screenshots of the overview, agents, calendar, leads, inbox, and analytics."
           />
-          <div className="mt-10">
-            <DashboardPreview />
-          </div>
+          <ProductScreenshots />
           <div className="mt-8">
             <Button href="/platform">Explore AI Platform</Button>
           </div>
@@ -69,7 +67,7 @@ export default function HomePage() {
             id="agents-heading"
             eyebrow="Meet the AI agents"
             title="Specialized help for everyday growth work."
-            description="Short summaries of what each agent prepares for your team. Availability depends on product readiness and is confirmed during onboarding."
+            description="Six agents are live on Growth. Performance Marketing and WhatsApp are in pilot."
           />
           <AgentGrid />
         </Container>

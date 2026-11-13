@@ -8,31 +8,18 @@ export type InterestValue = "self-service" | "managed" | "unsure";
  */
 export const showPublicPrices = process.env.NEXT_PUBLIC_SHOW_PRICES !== "false";
 
-/**
- * TODO (product/commercial confirmation — do not invent answers in public copy):
- * - Which agents are live and included in the $149 offer?
- * - Number of users and connected accounts?
- * - Monthly AI usage or fair-use limits?
- * - Supported social channels and integrations?
- * - Whether onboarding is included?
- * - Managed monthly post, campaign, and reporting quantities?
- * - Supported follow-up channels and human review time?
- * - Setup fee, contract minimum, and cancellation policy?
- * - Whether taxes, ad spend, WhatsApp/email provider charges, and other third-party fees are excluded?
- */
-
 export const offers = {
   selfService: {
     id: "self-service" as const,
     label: "Self-Service AI Platform",
     oneLiner: "You operate the agents.",
     title: "You operate the agents.",
-    body: "Use AI-assisted workflows to prepare content, manage marketing activities, organize leads, and review performance. Available features and integrations depend on current product readiness.",
+    body: "Use AI-assisted workflows to prepare content, manage marketing activities, organize leads, and review performance in one workspace.",
     commercialModel: "Monthly SaaS subscription",
     details: [
-      "Your team operates the platform",
-      "AI-assisted marketing and sales workflows",
-      "Scope confirmed during consultation",
+      "3 user seats and 5 connected accounts",
+      "6 live agents included; 2 in pilot",
+      "1,000 AI assists per month",
     ] as const,
     pricingLabel: "Self-Service AI Platform",
     pricingAmount: "From $149/month",
@@ -40,22 +27,31 @@ export const offers = {
     pricingAudience: "For teams that want to operate AI agents themselves.",
     mainValue: "AI platform and workflows",
     whoOperates: "Your team",
-    setup: "Customer-led with agreed onboarding support",
+    setup: "Included kickoff call and guided setup · $0 setup fee",
     approval: "Customer controls actions",
-    scope: "Confirmed during demo",
+    scope: "Growth plan package below",
+    planName: "Growth",
     inclusions: [
       "Shared AI growth workspace",
-      "Access to available agent workflows",
-      "Customer-controlled reviews and approvals",
-      "Demo-led onboarding discussion",
+      "Live agents: Content, Campaigns, Sales & Leads, Email, Analytics, Unified Inbox",
+      "Pilot agents: Performance Marketing, WhatsApp",
+      "Channels: LinkedIn, Instagram, Facebook, Gmail, Google Analytics 4",
+      "WhatsApp Business messaging in pilot",
+      "3 user seats",
+      "Up to 5 connected accounts",
+      "1,000 AI assists per month",
+      "Approvals before publish or send",
+      "Included onboarding: kickoff call + setup guide",
+      "$0 setup fee · month-to-month · cancel with 30 days’ notice",
     ] as const,
     scopedItems: [
-      "Which agents and channels are available for your account",
-      "Users, connected accounts, and fair-use limits",
-      "Onboarding support level and any setup fees",
-      "Integrations that are live versus planned",
+      "Extra seats or connected accounts",
+      "AI assist overages above 1,000/month",
+      "Custom integrations beyond listed channels",
+      "Taxes, advertising spend, and third-party messaging fees",
     ] as const,
-    scopeNote: "Scope and supported integrations confirmed during consultation.",
+    scopeNote:
+      "Taxes, advertising spend, and third-party messaging or platform fees are excluded unless separately agreed.",
     ctaLabel: "Request Platform Demo",
     exploreLabel: "Explore AI Platform",
     contactInterest: "self-service" as const,
@@ -68,9 +64,9 @@ export const offers = {
     body: "Our team plans, configures, runs, and reviews agreed content, campaign, lead-management, and follow-up activities, with your approval where required.",
     commercialModel: "Monthly managed-services subscription",
     details: [
-      "AIVA Growth operates agreed workflows",
-      "You approve important actions",
-      "Scope confirmed in the service proposal",
+      "16 posts and 2 campaigns each month",
+      "Lead handling and follow-up workflows",
+      "Bi-weekly reporting and human oversight",
     ] as const,
     pricingLabel: "Fully Managed AI Growth",
     pricingAmount: "From $799/month",
@@ -78,23 +74,29 @@ export const offers = {
     pricingAudience: "For businesses that want our team to operate agreed workflows.",
     mainValue: "Platform plus ongoing managed execution",
     whoOperates: "AIVA Growth team",
-    setup: "AIVA Growth configures agreed workflows",
+    setup: "AIVA Growth configures workflows · $499 one-time setup",
     approval: "Customer approves important actions",
-    scope: "Confirmed in service proposal",
+    scope: "Managed Growth monthly package below",
+    planName: "Managed Growth",
     inclusions: [
-      "Platform access for agreed workflows",
-      "Initial workflow setup and configuration",
-      "Ongoing human oversight and execution",
-      "Regular review of activities and next steps",
+      "Platform access for up to 5 client users",
+      "16 approved social posts per month",
+      "2 campaign setups or optimizations per month",
+      "Lead management for up to 100 new enquiries per month",
+      "2 active email follow-up sequences",
+      "WhatsApp follow-up support where connected (up to 200 conversation reviews/month)",
+      "Up to 8 hours of human review and execution per month",
+      "Bi-weekly activity report and one 60-minute monthly review call",
+      "$499 one-time setup · 3-month minimum · then month-to-month",
     ] as const,
     scopedItems: [
-      "Monthly deliverable quantities and channels",
-      "Review cadence and client responsibilities",
-      "Human review time and follow-up channels",
-      "Contract minimum, setup fees, and cancellation terms",
+      "Additional posts, campaigns, or review hours",
+      "Extra seats beyond 5 client users",
+      "Custom integrations and dedicated staffing",
+      "Taxes, advertising spend, and third-party messaging fees",
     ] as const,
     scopeNote:
-      "Your monthly deliverables, channels, review cadence, and responsibilities are defined in the service proposal.",
+      "Monthly quantities above are the Managed Growth package. Overages and custom work are quoted separately. Advertising spend and third-party fees stay excluded unless agreed in writing.",
     ctaLabel: "Discuss Managed Services",
     exploreLabel: "Explore Managed Services",
     discussLabel: "Discuss Managed Services",
@@ -145,9 +147,19 @@ export const pricingComparison = [
     managed: "Platform plus ongoing managed execution",
   },
   {
+    label: "Seats & accounts",
+    selfService: "3 seats · 5 connected accounts",
+    managed: "Up to 5 client users on the platform",
+  },
+  {
+    label: "Included agents",
+    selfService: "6 live · 2 pilot",
+    managed: "Same platform; AIVA Growth operates agreed workflows",
+  },
+  {
     label: "Setup",
-    selfService: "Customer-led with agreed onboarding support",
-    managed: "AIVA Growth configures agreed workflows",
+    selfService: "$0 setup · included kickoff",
+    managed: "$499 one-time setup · 3-month minimum",
   },
   {
     label: "Approval",
@@ -155,9 +167,9 @@ export const pricingComparison = [
     managed: "Customer approves important actions",
   },
   {
-    label: "Scope",
-    selfService: "Confirmed during demo",
-    managed: "Confirmed in service proposal",
+    label: "Contract",
+    selfService: "Month-to-month · 30-day notice",
+    managed: "3-month minimum, then month-to-month",
   },
 ] as const;
 
@@ -165,22 +177,22 @@ export const selfServiceSteps = [
   {
     step: "01",
     title: "Connect supported business accounts.",
-    detail: "Link the channels you are allowed to use, based on what is currently available.",
+    detail: "Link LinkedIn, Instagram, Facebook, Gmail, and GA4 (WhatsApp in pilot).",
   },
   {
     step: "02",
     title: "Configure available agents and workflows.",
-    detail: "Set preferences, permissions, and review rules for the work you want to run.",
+    detail: "Turn on included agents, set preferences, and define approval rules.",
   },
   {
     step: "03",
     title: "Run and review marketing activities.",
-    detail: "Use the workspace to prepare content, campaigns, leads, and follow-ups, then approve before they go out.",
+    detail: "Prepare content, campaigns, leads, and follow-ups, then approve before they go out.",
   },
   {
     step: "04",
     title: "Track results in the platform.",
-    detail: "Review activity and performance signals that your connected accounts provide.",
+    detail: "Review activity and performance from your connected accounts.",
   },
 ] as const;
 
@@ -193,40 +205,40 @@ export const managedSteps = [
   {
     step: "02",
     title: "Agree on services, channels, and monthly scope.",
-    detail: "Confirm deliverables, permissions, and approval points in a service proposal.",
+    detail: "Confirm the Managed Growth package quantities, permissions, and approval points.",
   },
   {
     step: "03",
     title: "Our team configures and operates workflows.",
-    detail: "AIVA Growth sets up and runs the agreed work using the same platform.",
+    detail: "AIVA Growth sets up and runs the agreed monthly work on the same platform.",
   },
   {
     step: "04",
     title: "Approve key actions and review reports.",
-    detail: "You stay informed, approve important actions, and refine the process together.",
+    detail: "You approve important actions and join the monthly review call.",
   },
 ] as const;
 
 export const managedServices = [
   {
     title: "Content Management",
-    detail: "Prepare and schedule approved marketing content.",
+    detail: "16 approved social posts per month, prepared and scheduled on agreed channels.",
   },
   {
     title: "Campaign Management",
-    detail: "Plan and operate agreed campaigns on supported channels.",
+    detail: "2 campaign setups or optimizations per month on supported channels.",
   },
   {
     title: "Lead Management",
-    detail: "Organize and qualify incoming enquiries for follow-up.",
+    detail: "Organize and qualify up to 100 new enquiries per month for follow-up.",
   },
   {
     title: "Customer Follow-up",
-    detail: "Configure and manage approved email or WhatsApp workflows where supported.",
+    detail: "2 active email sequences plus WhatsApp follow-up support where connected.",
   },
   {
     title: "Performance Reporting",
-    detail: "Review activity, lead handling, and campaign performance.",
+    detail: "Bi-weekly activity report and one 60-minute monthly review call.",
   },
 ] as const;
 
@@ -238,38 +250,59 @@ export const managedClientResponsibilities = [
 
 export const managedProcess = ["Discover", "Agree Scope", "Configure", "Operate & Review"] as const;
 
-export const platformUseCases = [
+export const platformScreenshots = [
   {
+    id: "overview",
     title: "Overview dashboard",
-    caption: "See open tasks, recent activity, and what needs review in one place.",
+    caption: "See open tasks, approvals, and recent activity in one place.",
+    src: "/product/aiva-overview.jpg",
+    alt: "AIVA Growth overview dashboard showing tasks, leads, and approvals",
   },
   {
+    id: "agents",
     title: "Agent workspace",
-    caption: "Open a specialized workflow to prepare marketing or sales work for review.",
+    caption: "Open a specialized agent to prepare marketing or sales work for review.",
+    src: "/product/aiva-agents.jpg",
+    alt: "AIVA Growth agent workspace with a content draft ready for approval",
   },
   {
+    id: "calendar",
     title: "Content calendar",
     caption: "Draft and schedule posts before anyone publishes them.",
+    src: "/product/aiva-calendar.jpg",
+    alt: "AIVA Growth content calendar with scheduled social posts",
   },
   {
+    id: "leads",
     title: "Lead management",
     caption: "Organize enquiries and keep the next follow-up step visible.",
+    src: "/product/aiva-leads.jpg",
+    alt: "AIVA Growth lead management table with status and next steps",
   },
   {
+    id: "inbox",
     title: "Unified inbox",
     caption: "Review customer conversations from supported channels together.",
+    src: "/product/aiva-inbox.jpg",
+    alt: "AIVA Growth unified inbox with conversation list and suggested reply",
   },
   {
+    id: "analytics",
     title: "Analytics",
-    caption: "Read performance summaries grounded in connected data sources.",
+    caption: "Read performance summaries from connected data sources.",
+    src: "/product/aiva-analytics.jpg",
+    alt: "AIVA Growth analytics dashboard with traffic and engagement charts",
   },
 ] as const;
 
+/** @deprecated Prefer platformScreenshots */
+export const platformUseCases = platformScreenshots.map(({ title, caption }) => ({ title, caption }));
+
 export const pricingFootnote =
-  "Prices are starting points. Final scope, agent access, onboarding fees, integrations, third-party charges, and terms are confirmed before engagement. Advertising budgets are separate.";
+  "Prices shown are for the Growth ($149/month) and Managed Growth ($799/month) packages. Taxes, advertising spend, and third-party messaging or platform fees are separate. Extra seats, AI assists, posts, or review hours can be added.";
 
 export const pricingConfirmation =
-  "Final scope, supported channels, and any external costs are confirmed before onboarding.";
+  "Advertising spend and third-party messaging fees are excluded unless separately agreed.";
 
 export function offerPrice(offer: typeof offers.selfService | typeof offers.managed): string {
   return showPublicPrices ? offer.pricingAmount : offer.pricingFallback;

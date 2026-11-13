@@ -10,45 +10,44 @@ export type Integration = {
 };
 
 /**
- * Edit status when a channel is confirmed live, in beta, still planned, or unavailable.
- * Do not mark a channel live without evidence. These names are text labels, not logos.
+ * Channel readiness for public marketing. Update when product status changes.
  */
 export const integrations: Integration[] = [
   {
     name: "LinkedIn",
     category: "Content publishing",
-    status: "planned",
-    note: "Intended for publishing from the content workspace after an account is connected and permission is granted.",
+    status: "live",
+    note: "Publish and schedule from the content workspace after an authorized account is connected.",
   },
   {
     name: "Instagram",
     category: "Content and messaging",
-    status: "planned",
-    note: "Intended for content publishing and, separately, for messaging inside the unified inbox.",
+    status: "live",
+    note: "Content publishing is live. Messaging appears in the unified inbox when the business account is connected.",
   },
   {
     name: "Facebook",
     category: "Content publishing",
-    status: "planned",
-    note: "Intended for publishing from the same dashboard, subject to the permissions on the connected account.",
+    status: "live",
+    note: "Publish from the same dashboard once the Page is connected with the required permissions.",
   },
   {
     name: "WhatsApp",
     category: "Messaging",
-    status: "planned",
-    note: "Intended for opted-in WhatsApp business messaging and for conversations in the unified inbox.",
+    status: "beta",
+    note: "Pilot for opted-in WhatsApp Business messaging and inbox conversations.",
   },
   {
     name: "Gmail",
     category: "Inbox conversations",
-    status: "planned",
-    note: "Intended as a conversation source for the unified inbox. It is not described here as the sender for marketing email campaigns.",
+    status: "live",
+    note: "Conversation source for the unified inbox. Marketing email campaigns use the Email agent separately.",
   },
   {
     name: "Google Analytics 4",
     category: "Website analytics",
-    status: "planned",
-    note: "Intended to show traffic, behavior, and engagement after an authorized user connects a property.",
+    status: "live",
+    note: "Shows traffic, behavior, and engagement after an authorized user connects a property.",
   },
 ];
 
@@ -57,7 +56,7 @@ export function statusLabel(status: IntegrationStatus): string {
     case "live":
       return "Live";
     case "beta":
-      return "Beta";
+      return "Pilot";
     case "planned":
       return "Planned";
     case "unavailable":

@@ -22,22 +22,22 @@ export const faqs: Faq[] = [
   {
     question: "What does the $149/month starting price cover?",
     answer:
-      "It is the starting price for the Self-Service AI Platform. Exact agents, channels, users, usage limits, and onboarding support are confirmed during consultation. Details that are not yet published are defined in your agreed plan.",
+      "The Growth plan includes 3 user seats, 5 connected accounts, 1,000 AI assists per month, six live agents (Content, Campaigns, Sales & Leads, Email, Analytics, Unified Inbox), and two pilot agents (Performance Marketing, WhatsApp). LinkedIn, Instagram, Facebook, Gmail, and GA4 are included. Onboarding kickoff is included with a $0 setup fee. Month-to-month billing with 30 days’ notice to cancel.",
   },
   {
     question: "What does the $799/month starting price cover?",
     answer:
-      "It is the starting price for Fully Managed AI Growth. Monthly deliverables, channels, review cadence, and responsibilities are defined in the service proposal before work begins.",
+      "Managed Growth includes platform access for up to 5 client users, 16 approved social posts per month, 2 campaign setups or optimizations, lead handling for up to 100 new enquiries, 2 active email sequences, WhatsApp follow-up support where connected, up to 8 hours of human review, bi-weekly reporting, and a monthly review call. Setup is $499 one-time with a 3-month minimum.",
   },
   {
     question: "Are ad spend and third-party fees included?",
     answer:
-      "No. Advertising spend and external messaging or platform fees are separate unless explicitly included in your proposal.",
+      "No. Advertising spend and external messaging or platform fees are separate unless explicitly included in your proposal. Taxes are also separate.",
   },
   {
     question: "Which integrations are available now?",
     answer:
-      "Candidate channels include LinkedIn, Instagram, Facebook, WhatsApp, Gmail, and Google Analytics 4. Availability depends on product readiness and your account configuration. We confirm what is available during the demo.",
+      "LinkedIn, Instagram, Facebook, Gmail, and Google Analytics 4 are live. WhatsApp Business messaging is in pilot. We confirm account connection steps during onboarding.",
   },
   {
     question: "Will AIVA Growth publish or message customers without approval?",
@@ -47,7 +47,7 @@ export const faqs: Faq[] = [
   {
     question: "How do I get started?",
     answer:
-      "Book a demo and tell us whether you want a Platform Demo or Managed Services. We will confirm fit, availability, and scope before onboarding.",
+      "Book a demo and choose Platform Demo or Managed Services. We confirm fit, connect accounts, and activate the package that matches your plan.",
   },
   {
     question: "How is information on this website handled?",
@@ -60,7 +60,7 @@ export const managedFaqs: Faq[] = [
   {
     question: "What does Fully Managed include each month?",
     answer:
-      "Agreed content, campaign, lead-management, follow-up, and reporting work. Exact quantities and channels are defined in the service proposal.",
+      "16 approved social posts, 2 campaign setups or optimizations, lead management for up to 100 new enquiries, 2 active email sequences, WhatsApp follow-up support where connected, up to 8 hours of human review, bi-weekly reporting, and one monthly review call.",
   },
   {
     question: "What does the client still need to do?",
@@ -70,6 +70,6 @@ export const managedFaqs: Faq[] = [
   {
     question: "Are advertising and messaging costs included?",
     answer:
-      "Advertising spend, third-party messaging fees, and custom integrations are excluded unless separately agreed.",
+      "Advertising spend, third-party messaging fees, and taxes are excluded unless separately agreed. Setup is $499 one-time.",
   },
 ];

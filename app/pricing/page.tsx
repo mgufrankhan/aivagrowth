@@ -19,7 +19,7 @@ export default function PricingPage() {
       <PageHeader
         eyebrow="Pricing"
         title="Compare what customers buy."
-        description="Two primary options. Starting prices are shown below. Exact inclusions, channels, and terms are confirmed before onboarding—not invented on this page."
+        description="Two primary packages: Growth at $149/month and Managed Growth at $799/month. Package details are listed below."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Pricing", path: "/pricing" },
@@ -44,19 +44,17 @@ export default function PricingPage() {
           <div>
             <h2 className="text-2xl font-semibold tracking-tight text-navy">What is included</h2>
             <p className="mt-3 text-sm leading-6 text-muted">
-              Capabilities described at a high level. Specific agents, usage, and channels are defined in your agreed
-              plan.
+              Package inclusions for Growth and Managed Growth.
             </p>
             <div className="mt-6 grid gap-4">
-              <InclusionList title={offers.selfService.label} items={offers.selfService.inclusions} />
-              <InclusionList title={offers.managed.label} items={offers.managed.inclusions} />
+              <InclusionList title={`${offers.selfService.planName} · ${offers.selfService.label}`} items={offers.selfService.inclusions} />
+              <InclusionList title={`${offers.managed.planName} · ${offers.managed.label}`} items={offers.managed.inclusions} />
             </div>
           </div>
           <div>
-            <h2 className="text-2xl font-semibold tracking-tight text-navy">What is confirmed during onboarding</h2>
+            <h2 className="text-2xl font-semibold tracking-tight text-navy">What is sold separately</h2>
             <p className="mt-3 text-sm leading-6 text-muted">
-              These details are not published as fixed public package numbers. Where undefined, they are confirmed in
-              consultation or a service proposal.
+              Add-ons, overages, and costs that stay outside the base package.
             </p>
             <div className="mt-6 grid gap-4">
               <InclusionList title={offers.selfService.label} items={offers.selfService.scopedItems} />
