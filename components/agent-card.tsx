@@ -14,7 +14,7 @@ export function AgentCard({ agent }: { agent: Agent }) {
   return (
     <Link
       href={agentPath(agent.slug)}
-      className="panel panel-interactive group flex h-full flex-col p-5"
+      className="panel-solid panel-interactive group flex h-full flex-col p-5"
     >
       <div className="flex items-start justify-between gap-3">
         <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-blue/10 text-blue transition-transform group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100">

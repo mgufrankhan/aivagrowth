@@ -140,15 +140,17 @@ function OfferCard({
     <article
       className={cn(
         "flex h-full flex-col rounded-2xl border bg-white p-6 transition-colors sm:p-8",
-        featured ? "border-blue/40 shadow-[0_20px_40px_-32px_rgba(7,26,67,0.35)]" : "border-line hover:border-navy/20",
+        featured
+          ? "border-blue/35 bg-white shadow-[0_28px_60px_-36px_rgba(7,26,67,0.45)]"
+          : "border-line/90 bg-white/85 backdrop-blur-sm hover:border-navy/20",
       )}
     >
       <div className="flex flex-wrap items-center gap-2">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue">{eyebrow}</p>
         <span className="rounded-full bg-lavender px-2.5 py-1 text-xs font-semibold text-navy">{planName}</span>
       </div>
-      <p className="mt-4 text-3xl font-semibold tracking-tight text-navy">{price}</p>
-      <h3 className="mt-3 text-xl font-semibold tracking-tight text-navy">{title}</h3>
+      <p className="font-display mt-4 text-3xl font-semibold text-navy">{price}</p>
+      <h3 className="font-display mt-3 text-xl font-semibold text-navy">{title}</h3>
       <p className="mt-3 text-sm leading-6 text-muted sm:text-base">{body}</p>
       <ul className="mt-5 space-y-2.5">
         {details.map((item) => (
@@ -181,7 +183,9 @@ function PricingCard({
       id={id}
       className={cn(
         "scroll-mt-28 flex h-full flex-col rounded-2xl border bg-white p-6 transition-colors sm:p-8",
-        featured ? "border-blue/40 shadow-[0_20px_40px_-32px_rgba(7,26,67,0.35)]" : "border-line hover:border-navy/20",
+        featured
+          ? "border-blue/35 bg-white shadow-[0_28px_60px_-36px_rgba(7,26,67,0.45)]"
+          : "border-line/90 bg-white/85 backdrop-blur-sm hover:border-navy/20",
       )}
     >
       <div className="flex flex-wrap items-center gap-2">
@@ -190,7 +194,7 @@ function PricingCard({
           {offer.planName}
         </span>
       </div>
-      <p className="mt-4 text-3xl font-semibold tracking-tight text-navy">{price}</p>
+      <p className="font-display mt-4 text-3xl font-semibold text-navy">{price}</p>
       <p className="mt-2 text-sm text-muted">{pricingConfirmation}</p>
       <p className="mt-4 text-base leading-7 text-muted">{offer.pricingAudience}</p>
 

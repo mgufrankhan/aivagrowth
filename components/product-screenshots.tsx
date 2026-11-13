@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useId, useState, type KeyboardEvent } from "react";
+import { ProductFrame } from "@/components/product-frame";
 import { platformScreenshots } from "@/data/offers";
 import { cn } from "@/lib/utils";
 
@@ -62,8 +63,8 @@ export function ProductScreenshots({
               className={cn(
                 "shrink-0 rounded-full px-3.5 py-2 text-sm font-semibold transition-colors",
                 selected
-                  ? "bg-navy text-white"
-                  : "border border-line bg-white text-muted hover:border-navy/20 hover:text-navy",
+                  ? "bg-navy text-white shadow-[0_12px_28px_-18px_rgba(7,26,67,0.7)]"
+                  : "border border-line/90 bg-white/80 text-muted backdrop-blur-sm hover:border-navy/20 hover:text-navy",
               )}
               onClick={() => setCurrentId(item.id)}
             >
@@ -77,9 +78,16 @@ export function ProductScreenshots({
         role="tabpanel"
         id={`${baseId}-panel`}
         aria-labelledby={`${baseId}-tab-${active.id}`}
-        className="mt-4 overflow-hidden rounded-2xl border border-line bg-white shadow-[0_24px_50px_-36px_rgba(7,26,67,0.45)]"
+        className="mt-5"
       >
-        <figure>
+        <ProductFrame
+          caption={
+            <>
+              <span className="font-semibold text-navy">{active.title}</span>
+              <span className="mt-1 block leading-6">{active.caption}</span>
+            </>
+          }
+        >
           <Image
             src={active.src}
             alt={active.alt}
@@ -88,11 +96,7 @@ export function ProductScreenshots({
             className="h-auto w-full"
             priority={active.id === featuredId}
           />
-          <figcaption className="border-t border-line px-5 py-4">
-            <p className="text-sm font-semibold text-navy">{active.title}</p>
-            <p className="mt-1 text-sm leading-6 text-muted">{active.caption}</p>
-          </figcaption>
-        </figure>
+        </ProductFrame>
       </div>
 
       <ul className="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-6" aria-hidden="true">

@@ -25,7 +25,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Section id="ways-to-grow" labelledBy="ways-heading">
+      <Section id="ways-to-grow" labelledBy="ways-heading" className="surface-mist">
         <Container>
           <SectionHeading
             id="ways-heading"
@@ -36,7 +36,7 @@ export default function HomePage() {
           <OfferChoice />
         </Container>
       </Section>
-      <Section className="border-y border-line bg-white">
+      <Section className="border-y border-line surface-sheet">
         <Container>
           <SectionHeading
             id="help-heading"
@@ -47,8 +47,9 @@ export default function HomePage() {
           <OutcomeProps />
         </Container>
       </Section>
-      <Section>
-        <Container>
+      <Section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 surface-mist" aria-hidden="true" />
+        <Container className="relative">
           <SectionHeading
             id="platform-heading"
             eyebrow="See the platform"
@@ -61,7 +62,7 @@ export default function HomePage() {
           </div>
         </Container>
       </Section>
-      <Section className="border-y border-line bg-white">
+      <Section className="border-y border-line surface-sheet">
         <Container>
           <SectionHeading
             id="agents-heading"
@@ -72,7 +73,7 @@ export default function HomePage() {
           <AgentGrid />
         </Container>
       </Section>
-      <Section>
+      <Section className="surface-mist">
         <Container>
           <SectionHeading
             id="workflow-heading"
@@ -83,28 +84,30 @@ export default function HomePage() {
           <ModelPaths />
         </Container>
       </Section>
-      <Section className="border-y border-line bg-white">
-        <Container>
+      <Section className="relative overflow-hidden border-y border-line">
+        <div className="absolute inset-0 surface-deep" aria-hidden="true" />
+        <Container className="relative">
           <SectionHeading
             id="audience-heading"
             eyebrow="Who it’s for"
             title="Built for B2B service companies."
             description="IT services, consultancies, agencies, professional services, and similar firms that need clearer marketing and sales workflows."
+            tone="inverse"
           />
           <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {audiences.map((audience) => (
               <li
                 key={audience.title}
-                className="rounded-2xl border border-line bg-white p-6 transition-colors hover:border-navy/20"
+                className="rounded-2xl border border-white/12 bg-white/5 p-6 backdrop-blur-sm transition-colors hover:bg-white/10"
               >
-                <h3 className="text-lg font-semibold text-navy">{audience.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-muted">{audience.detail}</p>
+                <h3 className="font-display text-lg font-semibold text-white">{audience.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-[#d5e2f7]">{audience.detail}</p>
               </li>
             ))}
           </ul>
         </Container>
       </Section>
-      <Section>
+      <Section className="surface-sheet">
         <Container>
           <SectionHeading
             id="faq-heading"

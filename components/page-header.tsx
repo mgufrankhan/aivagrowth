@@ -23,7 +23,7 @@ export function PageHeader({
       <Container className="relative py-12 sm:py-16">
         <PageBreadcrumbs items={crumbs} />
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue">{eyebrow}</p>
-        <h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-navy sm:text-5xl">{title}</h1>
+        <h1 className="font-display mt-3 max-w-3xl text-4xl font-semibold text-navy sm:text-5xl">{title}</h1>
         <p className="mt-4 max-w-2xl text-lg leading-8 text-muted">{description}</p>
         {children ? <div className="mt-8 flex flex-col gap-3 sm:flex-row">{children}</div> : null}
       </Container>

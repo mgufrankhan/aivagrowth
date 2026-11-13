@@ -23,11 +23,16 @@ export function CTASection({
         : ctaLabel();
 
   return (
-    <section className="bg-navy text-white" aria-labelledby="final-cta-title">
-      <Container className="py-16 sm:py-20">
+    <section className="relative overflow-hidden text-white" aria-labelledby="final-cta-title">
+      <div className="absolute inset-0 surface-deep" aria-hidden="true" />
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/50 to-transparent"
+        aria-hidden="true"
+      />
+      <Container className="relative py-16 sm:py-20">
         <div className="max-w-2xl">
-          <p className="h-1 w-10 rounded-full bg-orange" aria-hidden="true" />
-          <h2 id="final-cta-title" className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
+          <p className="h-1 w-12 rounded-full bg-orange" aria-hidden="true" />
+          <h2 id="final-cta-title" className="font-display mt-5 text-3xl font-semibold sm:text-4xl">
             {title}
           </h2>
           <p className="mt-4 text-base leading-7 text-[#d5e2f7] sm:text-lg">{description}</p>
