@@ -40,12 +40,13 @@ export const siteConfig = {
   brandExplanation: "AI Virtual Agents for Business Growth",
   positioning: "AI Growth Workforce",
   tagline: "Your AI Team for Business Growth.",
+  heroSubheading:
+    "Create marketing content, manage campaigns, organize leads, follow up with customers, and understand performance with AI-powered workflows.",
+  heroSupport: "Run the platform yourself, or let our team manage it for you.",
   supportingLine:
-    "An AI growth workforce for B2B service businesses, powered by an AI marketing and sales agent platform.",
-  heroSupport:
-    "AIVA Growth brings AI agents together to help B2B service businesses create content, manage leads, follow up with prospects, and keep marketing and sales moving. Run the platform yourself, or let our team manage it for you.",
+    "An AI growth workforce for marketing and sales. Operate the platform yourself, or have AIVA Growth operate agreed workflows for you.",
   description:
-    "AI agents for B2B marketing and sales. Run AIVA Growth yourself with a monthly platform subscription, or choose fully managed AI growth services.",
+    "AI agents for B2B marketing and sales. Run AIVA Growth yourself from $149/month, or choose Fully Managed AI Growth from $799/month.",
   ctaMode: resolveCtaMode(process.env.NEXT_PUBLIC_CTA_MODE),
   locale: "en_US",
 } as const;
@@ -61,7 +62,7 @@ export function ctaLabel(mode: CtaMode = siteConfig.ctaMode): string {
     case "waitlist":
       return "Join Waitlist";
     case "demo":
-      return "Book a Demo";
+      return "Book Demo";
     default: {
       const exhaustive: never = mode;
       return exhaustive;
@@ -74,7 +75,7 @@ export function ctaHeading(mode: CtaMode = siteConfig.ctaMode): string {
     case "waitlist":
       return "Join the Waitlist";
     case "demo":
-      return "Book a Demo";
+      return "Book Demo";
     default: {
       const exhaustive: never = mode;
       return exhaustive;

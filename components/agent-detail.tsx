@@ -4,8 +4,8 @@ import { Button } from "@/components/button";
 import { CTASection } from "@/components/cta-section";
 import { PageHeader } from "@/components/page-header";
 import { Section, Container } from "@/components/container";
-import { agentPath, relatedAgents, type Agent } from "@/data/agents";
-import { ctaLabel } from "@/data/site";
+import { agentPath, agentReadinessLabel, relatedAgents, type Agent } from "@/data/agents";
+import { contactHref, offers } from "@/data/offers";
 
 export function AgentDetail({ agent }: { agent: Agent }) {
   const related = relatedAgents(agent.slug);
@@ -15,27 +15,46 @@ export function AgentDetail({ agent }: { agent: Agent }) {
       <PageHeader
         eyebrow="AI agent"
         title={agent.name}
-        description={agent.valueProposition}
+        description={agent.summary}
         crumbs={[
           { name: "Home", path: "/" },
           { name: "AI Agents", path: "/ai-agents" },
           { name: agent.name, path: agentPath(agent.slug) },
         ]}
       >
-        <Button href="/contact">{ctaLabel()}</Button>
-        <Button href="/how-it-works" variant="secondary">
-          See how it works
+        <Button href={contactHref(offers.selfService.contactInterest)}>{offers.selfService.ctaLabel}</Button>
+        <Button href={contactHref(offers.managed.contactInterest)} variant="secondary">
+          {offers.managed.ctaLabel}
         </Button>
       </PageHeader>
       <Section>
         <Container className="grid gap-10">
-          <p className="rounded-2xl border border-line bg-white px-5 py-4 text-sm leading-6 text-muted">
-            Use this capability in your own workspace or discuss a managed workflow. Inclusion and readiness depend on
-            the plan and configuration confirmed during onboarding.
-          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="rounded-full bg-blue/10 px-3 py-1 text-xs font-semibold text-navy">
+              {agentReadinessLabel(agent.readiness)}
+            </span>
+            <p className="text-sm leading-6 text-muted">
+              Use this capability in your own workspace or discuss a managed workflow. Inclusion depends on the plan
+              confirmed during onboarding.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            <article className="rounded-2xl border border-line bg-white p-5">
+              <h2 className="text-lg font-semibold text-navy">What does it do?</h2>
+              <p className="mt-2 text-sm leading-6 text-muted">{agent.summary}</p>
+            </article>
+            <article className="rounded-2xl border border-line bg-white p-5">
+              <h2 className="text-lg font-semibold text-navy">What output do you get?</h2>
+              <p className="mt-2 text-sm leading-6 text-muted">{agent.output}</p>
+            </article>
+            <article className="rounded-2xl border border-line bg-white p-5">
+              <h2 className="text-lg font-semibold text-navy">What problem does it address?</h2>
+              <p className="mt-2 text-sm leading-6 text-muted">{agent.problem}</p>
+            </article>
+          </div>
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)]">
             <div>
-              <h2 className="text-2xl font-semibold text-navy">What this agent is designed to do</h2>
+              <h2 className="text-2xl font-semibold text-navy">More detail</h2>
               <p className="mt-4 text-base leading-7 text-muted">{agent.overview}</p>
               <ul className="mt-8 space-y-4">
                 {agent.capabilities.map((capability) => (
@@ -96,7 +115,7 @@ export function AgentDetail({ agent }: { agent: Agent }) {
       </Section>
       <CTASection
         title={`Talk through ${agent.navLabel.toLowerCase()}.`}
-        description="Tell us how this part of the work happens today. We can walk through the workflow without assuming a public launch or a live integration."
+        description="Tell us how this part of the work happens today. We can walk through Self-Service or Managed Services without inventing live integrations."
       />
     </>
   );

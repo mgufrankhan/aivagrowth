@@ -8,7 +8,6 @@ import { useForm } from "react-hook-form";
 import { submitDemoRequest, type DemoActionResult } from "@/app/actions/demo";
 import { FormButton } from "@/components/button";
 import { interestOptions, type InterestValue } from "@/data/offers";
-import { businessTypes, mainChallenges } from "@/data/form-options";
 import { ctaHeading, ctaLabel, type CtaMode } from "@/data/site";
 import { demoFormSchema, type DemoFormValues } from "@/lib/demo-schema";
 import type { PublicFormStatus } from "@/lib/public-form";
@@ -110,7 +109,8 @@ export function DemoForm({
     >
       <h2 className="text-2xl font-semibold text-navy">{ctaHeading(ctaMode)}</h2>
       <p className="mt-2 text-sm leading-6 text-muted">
-        Required fields are marked with an asterisk. This form does not create an account.
+        Tell us whether you want a Platform Demo or Managed Services. Required fields are marked with an asterisk.
+        This form does not create an account.
       </p>
       {status.notice ? (
         <p className="mt-4 flex gap-2 rounded-2xl border border-orange/40 bg-orange/10 p-4 text-sm leading-6 text-navy" role="note">
@@ -161,38 +161,7 @@ export function DemoForm({
             {...register("website")}
           />
         </Field>
-        <Field label="Business type" id="business-type" error={errors.businessType?.message}>
-          <select
-            id="business-type"
-            className={inputClass(Boolean(errors.businessType))}
-            aria-invalid={Boolean(errors.businessType)}
-            aria-describedby={errors.businessType ? "business-type-error" : undefined}
-            {...register("businessType")}
-          >
-            {businessTypes.map((option) => (
-              <option key={option.value || "blank"} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </Field>
-        <Field label="Main challenge" id="main-challenge" error={errors.mainChallenge?.message} required>
-          <select
-            id="main-challenge"
-            className={inputClass(Boolean(errors.mainChallenge))}
-            aria-invalid={Boolean(errors.mainChallenge)}
-            aria-describedby={errors.mainChallenge ? "main-challenge-error" : undefined}
-            {...register("mainChallenge")}
-          >
-            <option value="">Select a challenge</option>
-            {mainChallenges.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </Field>
-        <Field label="Interested in" id="interested-in" error={errors.interestedIn?.message} required className="sm:col-span-2">
+        <Field label="Enquiry type" id="interested-in" error={errors.interestedIn?.message} required className="sm:col-span-2">
           <select
             id="interested-in"
             className={inputClass(Boolean(errors.interestedIn))}
@@ -208,10 +177,11 @@ export function DemoForm({
             ))}
           </select>
         </Field>
-        <Field label="Message" id="message" error={errors.message?.message} className="sm:col-span-2">
+        <Field label="Brief requirement" id="message" error={errors.message?.message} className="sm:col-span-2">
           <textarea
             id="message"
-            rows={5}
+            rows={4}
+            placeholder="What do you want to improve?"
             className={cn(inputClass(Boolean(errors.message)), "h-auto py-3")}
             aria-invalid={Boolean(errors.message)}
             aria-describedby={errors.message ? "message-error" : undefined}

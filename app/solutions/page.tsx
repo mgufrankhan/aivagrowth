@@ -2,9 +2,8 @@ import { Button } from "@/components/button";
 import { Container, Section } from "@/components/container";
 import { CTASection } from "@/components/cta-section";
 import { PageHeader } from "@/components/page-header";
-import { offers } from "@/data/offers";
+import { contactHref, offers } from "@/data/offers";
 import { audiences, solutionWorkflows } from "@/data/solutions";
-import { ctaLabel } from "@/data/site";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
@@ -26,9 +25,9 @@ export default function SolutionsPage() {
           { name: "Solutions", path: "/solutions" },
         ]}
       >
-        <Button href="/contact">{ctaLabel()}</Button>
-        <Button href="/pricing" variant="secondary">
-          Explore plans
+        <Button href={contactHref(offers.selfService.contactInterest)}>{offers.selfService.ctaLabel}</Button>
+        <Button href={contactHref(offers.managed.contactInterest)} variant="secondary">
+          {offers.managed.ctaLabel}
         </Button>
       </PageHeader>
       <Section>
@@ -65,10 +64,20 @@ export default function SolutionsPage() {
             <article className="rounded-2xl border border-line p-5">
               <h3 className="font-semibold text-navy">{offers.selfService.label}</h3>
               <p className="mt-2 text-sm leading-6 text-muted">{offers.selfService.oneLiner}</p>
+              <div className="mt-4">
+                <Button href={contactHref(offers.selfService.contactInterest)} variant="secondary">
+                  {offers.selfService.ctaLabel}
+                </Button>
+              </div>
             </article>
             <article className="rounded-2xl border border-line p-5">
               <h3 className="font-semibold text-navy">{offers.managed.label}</h3>
               <p className="mt-2 text-sm leading-6 text-muted">{offers.managed.oneLiner}</p>
+              <div className="mt-4">
+                <Button href={contactHref(offers.managed.contactInterest)} variant="secondary">
+                  {offers.managed.ctaLabel}
+                </Button>
+              </div>
             </article>
           </div>
         </Container>

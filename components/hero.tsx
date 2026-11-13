@@ -4,7 +4,8 @@ import { MotionConfig, motion } from "motion/react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { DashboardPreview } from "@/components/dashboard-preview";
-import { ctaLabel, siteConfig } from "@/data/site";
+import { offerPrice, offers } from "@/data/offers";
+import { siteConfig } from "@/data/site";
 
 export function Hero() {
   return (
@@ -26,19 +27,24 @@ export function Hero() {
             <h1 className="mt-5 max-w-xl text-4xl font-semibold tracking-tight text-navy sm:text-5xl sm:leading-[1.05] lg:text-6xl">
               {siteConfig.tagline}
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-muted">{siteConfig.heroSupport}</p>
+            <p className="mt-5 max-w-xl text-lg leading-8 text-muted">{siteConfig.heroSubheading}</p>
+            <p className="mt-3 max-w-xl text-base font-medium leading-7 text-navy">{siteConfig.heroSupport}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href="/pricing">Explore Plans</Button>
-              <Button href="/contact" variant="secondary">
-                {ctaLabel()}
+              <Button href="/platform">{offers.selfService.exploreLabel}</Button>
+              <Button href="/managed-services" variant="secondary">
+                {offers.managed.exploreLabel}
               </Button>
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm font-medium text-navy">
-              <span>Self-Service Platform</span>
+              <span>
+                Self-Service {offerPrice(offers.selfService)}
+              </span>
               <span className="text-muted" aria-hidden="true">
                 |
               </span>
-              <span>Fully Managed Growth</span>
+              <span>
+                Fully Managed {offerPrice(offers.managed)}
+              </span>
             </div>
           </motion.div>
         </MotionConfig>

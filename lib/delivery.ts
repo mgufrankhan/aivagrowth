@@ -176,7 +176,7 @@ async function deliverDatabase(inquiry: DemoInquiry): Promise<DeliveryResult> {
         ${inquiry.companyName},
         ${inquiry.website || null},
         ${inquiry.businessType || null},
-        ${inquiry.mainChallenge},
+        ${inquiry.mainChallenge || null},
         ${interestLabel(inquiry.interestedIn)},
         ${inquiry.message || null}
       )
@@ -213,7 +213,7 @@ function publicInquiry(inquiry: DemoInquiry) {
     companyName: inquiry.companyName,
     website: inquiry.website || null,
     businessType: businessTypeLabel(inquiry.businessType) || null,
-    mainChallenge: challengeLabel(inquiry.mainChallenge),
+    mainChallenge: inquiry.mainChallenge ? challengeLabel(inquiry.mainChallenge) : null,
     interestedIn: interestLabel(inquiry.interestedIn),
     message: inquiry.message || null,
     consent: true,
@@ -230,10 +230,10 @@ function inquiryText(inquiry: DemoInquiry): string {
     `Company: ${payload.companyName}`,
     `Website: ${payload.website ?? "Not provided"}`,
     `Business type: ${payload.businessType ?? "Not provided"}`,
-    `Main challenge: ${payload.mainChallenge}`,
-    `Interested in: ${payload.interestedIn}`,
+    `Main challenge: ${payload.mainChallenge ?? "Not provided"}`,
+    `Enquiry type: ${payload.interestedIn}`,
     "",
-    "Message:",
+    "Brief requirement:",
     payload.message ?? "Not provided",
   ].join("\n");
 }

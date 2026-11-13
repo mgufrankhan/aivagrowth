@@ -27,13 +27,13 @@ export const demoFormSchema = z.object({
   businessType: z.string().refine((value) => businessTypeValues.includes(value), {
     message: "Choose a business type from the list or leave it blank.",
   }),
-  mainChallenge: z.string().refine((value) => challengeValues.includes(value) && value !== "", {
-    message: "Select the main challenge you want to discuss.",
+  mainChallenge: z.string().refine((value) => value === "" || challengeValues.includes(value), {
+    message: "Choose a challenge from the list or leave it blank.",
   }),
   interestedIn: z.string().refine((value) => interestValues.includes(value), {
-    message: "Select what you are interested in.",
+    message: "Select Platform Demo or Managed Services.",
   }),
-  message: z.string().trim().max(2000, "Keep the message under 2,000 characters."),
+  message: z.string().trim().max(2000, "Keep the brief requirement under 2,000 characters."),
   consent: z.boolean().refine((value) => value, {
     message: "Consent is required before this inquiry can be accepted.",
   }),

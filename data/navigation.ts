@@ -8,11 +8,8 @@ export type NavItem = {
 export const primaryNav: NavItem[] = [
   { label: "Platform", href: "/platform" },
   { label: "AI Agents", href: "/ai-agents" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "How It Works", href: "/how-it-works" },
-  { label: "Pricing", href: "/pricing" },
   { label: "Managed Services", href: "/managed-services" },
-  { label: "Contact", href: "/contact" },
+  { label: "Pricing", href: "/pricing" },
 ];
 
 export const agentNav: NavItem[] = agents.map((agent) => ({
@@ -23,10 +20,10 @@ export const agentNav: NavItem[] = agents.map((agent) => ({
 export const footerProduct: NavItem[] = [
   { label: "Platform", href: "/platform" },
   { label: "AI Agents", href: "/ai-agents" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "How It Works", href: "/how-it-works" },
-  { label: "Pricing", href: "/pricing" },
   { label: "Managed Services", href: "/managed-services" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "How It Works", href: "/how-it-works" },
+  { label: "Solutions", href: "/solutions" },
 ];
 
 export const footerCompany: NavItem[] = [

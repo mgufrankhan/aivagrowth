@@ -1,98 +1,92 @@
 import { ApprovalNote } from "@/components/approval-note";
 import { AgentGrid } from "@/components/agent-grid";
 import { Button } from "@/components/button";
-import { ConnectedWorkspace } from "@/components/connected-workspace";
 import { Container, Section } from "@/components/container";
 import { CTASection } from "@/components/cta-section";
+import { DashboardPreview } from "@/components/dashboard-preview";
 import { PageHeader } from "@/components/page-header";
-import { offers } from "@/data/offers";
-import { ctaLabel } from "@/data/site";
+import { contactHref, offers, platformUseCases } from "@/data/offers";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
   title: "Platform",
   description:
-    "See how the AIVA Growth SaaS workspace powers Self-Service and Fully Managed marketing and sales workflows for B2B service teams.",
+    "See the AIVA Growth AI platform for content, campaigns, leads, follow-ups, and reporting. Run it yourself from $149/month.",
   path: "/platform",
 });
-
-const boundaries = [
-  {
-    title: "A marketing and sales workspace",
-    detail:
-      "The platform is designed so content, campaigns, leads, conversations, and performance review can share context instead of starting over in another tool.",
-  },
-  {
-    title: "Powers both ways of working",
-    detail:
-      "The same AI growth workspace supports Self-Service teams that operate the agents themselves and Fully Managed engagements where AIVA Growth operates agreed workflows.",
-  },
-  {
-    title: "Not an ERP or a generic chatbot",
-    detail:
-      "It does not replace finance, inventory, or HR, and the agents are specialized workflows with review points rather than a single bot for every department.",
-  },
-];
 
 export default function PlatformPage() {
   return (
     <>
       <PageHeader
         eyebrow="Platform"
-        title="One workspace for the growth work your team already does."
-        description="AIVA Growth is an AI growth workforce powered by one marketing and sales agent platform. You can run that workspace yourself, or ask our team to manage agreed workflows with your oversight."
+        title="The AI software your team can operate."
+        description="AIVA Growth is a workspace for marketing and sales workflows. Prepare content, manage campaigns, organize leads, follow up with customers, and review performance—with approvals before anything goes out."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Platform", path: "/platform" },
         ]}
       >
-        <Button href="/contact">{ctaLabel()}</Button>
-        <Button href="/pricing" variant="secondary">
-          Explore plans
+        <Button href={contactHref(offers.selfService.contactInterest)}>{offers.selfService.ctaLabel}</Button>
+        <Button href="/managed-services" variant="secondary">
+          {offers.managed.exploreLabel}
         </Button>
       </PageHeader>
       <Section>
-        <Container className="grid gap-4 lg:grid-cols-3">
-          {boundaries.map((item) => (
-            <article key={item.title} className="rounded-2xl border border-line bg-white p-5">
-              <h2 className="text-lg font-semibold text-navy">{item.title}</h2>
-              <p className="mt-2 text-sm leading-6 text-muted">{item.detail}</p>
-            </article>
-          ))}
+        <Container>
+          <h2 className="text-3xl font-semibold tracking-tight text-navy">See the workspace</h2>
+          <p className="mt-4 max-w-3xl text-base leading-7 text-muted">
+            No verified product screenshots are in this repository yet. The preview below is an accurately labeled
+            illustrative sample, not a live customer dashboard. TODO: replace with verified screenshots of overview,
+            agents, content calendar, leads, inbox, and analytics.
+          </p>
+          <div className="mt-10">
+            <DashboardPreview />
+          </div>
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {platformUseCases.map((item) => (
+              <li key={item.title} className="rounded-2xl border border-line bg-white p-5">
+                <h3 className="text-lg font-semibold text-navy">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-muted">{item.caption}</p>
+              </li>
+            ))}
+          </ul>
         </Container>
       </Section>
-      <Section className="bg-white pt-0">
+      <Section className="border-y border-line bg-white">
         <Container>
-          <h2 className="text-3xl font-semibold tracking-tight text-navy">How the pieces sit together</h2>
+          <h2 className="text-3xl font-semibold tracking-tight text-navy">Practical use cases</h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-muted">
-            A campaign is easier to judge when the content, the lead list, the replies, and the website trend are
-            visible together. That is the point of the shared workspace. It reduces context switching. It does not
-            claim that every channel is already connected or that every agent is included in every plan.
+            Use the Self-Service AI Platform when your team wants to operate the agents. The same software also powers
+            Fully Managed engagements. Available features and integrations depend on current product readiness.
           </p>
-          <ConnectedWorkspace />
           <div className="mt-6">
             <ApprovalNote />
           </div>
-        </Container>
-      </Section>
-      <Section>
-        <Container>
-          <h2 className="text-3xl font-semibold tracking-tight text-navy">The agents inside the workspace</h2>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-muted">
-            Eight workflows cover content, campaigns, performance, leads, WhatsApp, email, GA4 analytics, and a
-            unified inbox. Open any card for the exact scope, including what still depends on permissions. These are
-            platform capabilities, not a promise that every plan includes every agent.
-          </p>
-          <AgentGrid />
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button href="/pricing">{offers.selfService.exploreLabel}</Button>
-            <Button href="/managed-services" variant="secondary">
-              {offers.managed.exploreLabel}
+            <Button href={contactHref(offers.selfService.contactInterest)}>{offers.selfService.ctaLabel}</Button>
+            <Button href="/pricing" variant="secondary">
+              Compare pricing
             </Button>
           </div>
         </Container>
       </Section>
-      <CTASection />
+      <Section>
+        <Container>
+          <h2 className="text-3xl font-semibold tracking-tight text-navy">Agents inside the platform</h2>
+          <p className="mt-4 max-w-3xl text-base leading-7 text-muted">
+            Eight workflows support everyday growth work. Open any card for outputs and safeguards. Agents are not
+            automatically included in every plan.
+          </p>
+          <AgentGrid />
+        </Container>
+      </Section>
+      <CTASection
+        dual={false}
+        primaryInterest="self-service"
+        title="Request Platform Demo"
+        description="Tell us about your business. We will confirm which workflows and channels are available for Self-Service."
+      />
     </>
   );
 }

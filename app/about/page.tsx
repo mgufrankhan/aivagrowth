@@ -2,8 +2,8 @@ import { Button } from "@/components/button";
 import { Container, Section } from "@/components/container";
 import { CTASection } from "@/components/cta-section";
 import { PageHeader } from "@/components/page-header";
-import { offers } from "@/data/offers";
-import { ctaLabel, siteConfig } from "@/data/site";
+import { contactHref, offers } from "@/data/offers";
+import { siteConfig } from "@/data/site";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
@@ -25,7 +25,10 @@ export default function AboutPage() {
           { name: "About", path: "/about" },
         ]}
       >
-        <Button href="/contact">{ctaLabel()}</Button>
+        <Button href={contactHref(offers.selfService.contactInterest)}>{offers.selfService.ctaLabel}</Button>
+        <Button href={contactHref(offers.managed.contactInterest)} variant="secondary">
+          {offers.managed.ctaLabel}
+        </Button>
       </PageHeader>
       <Section>
         <Container className="grid gap-10 lg:grid-cols-2">

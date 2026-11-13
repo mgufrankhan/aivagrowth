@@ -1,18 +1,15 @@
 import { AgentGrid } from "@/components/agent-grid";
-import { ConnectedWorkspace } from "@/components/connected-workspace";
 import { Container, Section } from "@/components/container";
 import { CTASection } from "@/components/cta-section";
+import { DashboardPreview } from "@/components/dashboard-preview";
 import { FAQAccordion } from "@/components/faq-accordion";
 import { Hero } from "@/components/hero";
-import { IntegrationGrid } from "@/components/integration-grid";
-import { ManagedProcess } from "@/components/managed-process";
 import { ModelPaths } from "@/components/model-paths";
-import { OfferChoice, PricingCards } from "@/components/offer-choice";
+import { OfferChoice } from "@/components/offer-choice";
 import { OutcomeProps } from "@/components/outcome-props";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/button";
 import { faqs } from "@/data/faqs";
-import { contactHref, offers, pricingFootnote } from "@/data/offers";
 import { audiences } from "@/data/solutions";
 import { siteConfig } from "@/data/site";
 import { createPageMetadata } from "@/lib/seo";
@@ -32,9 +29,9 @@ export default function HomePage() {
         <Container>
           <SectionHeading
             id="ways-heading"
-            eyebrow="Choose how you work"
-            title="One AI growth platform. Two ways to use it."
-            description="Choose the level of hands-on involvement that works for your business."
+            eyebrow="Two ways to work with us"
+            title="Operate the platform yourself, or let us manage it."
+            description="Exactly two commercial options. Starting prices are shown below; final scope is confirmed before onboarding."
           />
           <OfferChoice />
         </Container>
@@ -42,10 +39,10 @@ export default function HomePage() {
       <Section className="border-y border-line bg-white">
         <Container>
           <SectionHeading
-            id="outcomes-heading"
-            eyebrow="What teams want"
-            title="Practical outcomes for marketing and sales work."
-            description="These are the kinds of improvements AIVA Growth is designed to support. They are not numerical promises."
+            id="help-heading"
+            eyebrow="What AIVA Growth helps you do"
+            title="Content, campaigns, leads, follow-ups, and reporting."
+            description="Concrete marketing and sales work—not architecture jargon."
           />
           <OutcomeProps />
         </Container>
@@ -53,43 +50,48 @@ export default function HomePage() {
       <Section>
         <Container>
           <SectionHeading
-            id="agents-heading"
-            eyebrow="Eight agents"
-            title="Specialized help for the work that usually gets split across tools."
-            description="Each capability below is a platform workflow. These agents are not automatically included in every plan. Where a connection or automation is not confirmed, the detail page says so."
+            id="platform-heading"
+            eyebrow="See the platform"
+            title="One workspace for marketing and sales workflows."
+            description="The preview below is illustrative. Verified product screenshots will replace it when available."
           />
-          <AgentGrid />
+          <div className="mt-10">
+            <DashboardPreview />
+          </div>
+          <div className="mt-8">
+            <Button href="/platform">Explore AI Platform</Button>
+          </div>
         </Container>
       </Section>
       <Section className="border-y border-line bg-white">
         <Container>
           <SectionHeading
-            id="workflow-heading"
-            eyebrow="How it works"
-            title="Two clear paths. Approvals stay in both."
-            description="Choose Self-Service or Fully Managed. Permissions, consent, and review safeguards apply either way."
+            id="agents-heading"
+            eyebrow="Meet the AI agents"
+            title="Specialized help for everyday growth work."
+            description="Short summaries of what each agent prepares for your team. Availability depends on product readiness and is confirmed during onboarding."
           />
-          <ModelPaths />
+          <AgentGrid />
         </Container>
       </Section>
       <Section>
         <Container>
           <SectionHeading
-            id="workspace-heading"
-            eyebrow="Connected workspace"
-            title="Content, campaigns, leads, inbox, and analytics in one flow."
-            description="A shared workspace is designed to cut down the context switching between drafting, launching, following up, replying, and reading results. Channels shown here are planned connections, not a claim that every integration is live."
+            id="workflow-heading"
+            eyebrow="How it works"
+            title="Two simple journeys. Approvals stay in both."
+            description="Self-Service means your team runs the workflows. Fully Managed means our team operates agreed work with your oversight."
           />
-          <ConnectedWorkspace />
+          <ModelPaths />
         </Container>
       </Section>
       <Section className="border-y border-line bg-white">
         <Container>
           <SectionHeading
             id="audience-heading"
-            eyebrow="Who it is for"
-            title="Built around B2B service-based SMEs."
-            description="The same marketing and sales jobs show up in agencies, consultancies, IT services, professional services, and other service businesses. You can run the platform yourself or ask our team to manage agreed workflows."
+            eyebrow="Who it’s for"
+            title="Built for B2B service companies."
+            description="IT services, consultancies, agencies, professional services, and similar firms that need clearer marketing and sales workflows."
           />
           <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {audiences.map((audience) => (
@@ -101,58 +103,17 @@ export default function HomePage() {
           </ul>
         </Container>
       </Section>
-      <Section id="pricing" labelledBy="pricing-heading">
-        <Container>
-          <SectionHeading
-            id="pricing-heading"
-            eyebrow="Simple ways to get started"
-            title="Choose your AI growth team."
-            description="Exactly two ways to work with AIVA Growth. No pay-as-you-go storefront, hybrid package, or per-agent checkout on this site."
-          />
-          <PricingCards />
-          <p className="mt-6 max-w-3xl text-sm leading-6 text-muted">{pricingFootnote}</p>
-        </Container>
-      </Section>
-      <Section className="border-y border-line bg-white" id="managed-services" labelledBy="managed-heading">
-        <Container>
-          <SectionHeading
-            id="managed-heading"
-            eyebrow="Managed services"
-            title="Your AI growth team, managed by us."
-            description="You focus on serving customers. We help run the agreed marketing and sales workflows behind the scenes, using AIVA Growth agents with human review and clear approval rules."
-          />
-          <ManagedProcess />
-          <p className="mt-6 max-w-3xl text-sm leading-6 text-muted">{offers.managed.scopeNote}</p>
-          <div className="mt-8">
-            <Button href={contactHref(offers.managed.contactInterest)}>{offers.managed.discussLabel}</Button>
-          </div>
-        </Container>
-      </Section>
       <Section>
-        <Container>
-          <SectionHeading
-            id="integrations-heading"
-            eyebrow="Integrations"
-            title="Channel categories, with an honest status."
-            description="LinkedIn, Instagram, Facebook, WhatsApp, Gmail, and Google Analytics 4 are the candidate channels. None of them is described as a one-click install."
-          />
-          <IntegrationGrid />
-        </Container>
-      </Section>
-      <Section className="border-t border-line bg-white">
         <Container>
           <SectionHeading
             id="faq-heading"
             eyebrow="Questions"
-            title="Straight answers, including what is not confirmed yet."
+            title="Straight answers about the platform and managed services."
           />
           <FAQAccordion items={faqs} />
         </Container>
       </Section>
-      <CTASection
-        title="Ready to put an AI growth team to work?"
-        description="Tell us what you want to improve. We’ll help you choose between operating AIVA Growth yourself and having our team manage the workflows."
-      />
+      <CTASection />
     </>
   );
 }

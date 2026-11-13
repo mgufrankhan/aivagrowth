@@ -9,7 +9,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Contact",
   description:
-    "Book a demo of AIVA Growth and tell us whether you are interested in Self-Service AI Platform or Fully Managed AI Growth. Submitting the form does not create an account.",
+    "Book a demo of AIVA Growth. Choose Platform Demo or Managed Services. Submitting the form does not create an account.",
   path: "/contact",
 });
 
@@ -28,7 +28,7 @@ export default async function ContactPage({
       <PageHeader
         eyebrow="Contact"
         title={ctaHeading()}
-        description="Tell us about your marketing and sales workflow, and we’ll help you explore whether Self-Service or Fully Managed is the better fit. Sending this form does not create an account or confirm that the product is publicly available."
+        description="Choose Platform Demo or Managed Services, then share a brief requirement. Sending this form does not create an account or confirm that every feature is live."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Contact", path: "/contact" },

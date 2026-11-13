@@ -16,12 +16,17 @@ export type AgentPoint = {
   detail: string;
 };
 
+export type AgentReadiness = "available" | "pilot" | "planned";
+
 export type Agent = {
   slug: AgentSlug;
   name: string;
   navLabel: string;
   summary: string;
   valueProposition: string;
+  output: string;
+  problem: string;
+  readiness: AgentReadiness;
   overview: string;
   capabilities: AgentPoint[];
   workflow: AgentPoint[];
@@ -32,13 +37,31 @@ export type Agent = {
   };
 };
 
+export function agentReadinessLabel(status: AgentReadiness): string {
+  switch (status) {
+    case "available":
+      return "Available";
+    case "pilot":
+      return "Pilot";
+    case "planned":
+      return "Planned";
+    default: {
+      const exhaustive: never = status;
+      return exhaustive;
+    }
+  }
+}
+
 export const agents: Agent[] = [
   {
     slug: "content",
     name: "Content Generation & Scheduling",
     navLabel: "Content",
-    summary: "Plan, create, and manage social content from one dashboard.",
-    valueProposition: "Plan, create, and manage your content in one place.",
+    summary: "Creates drafts of social posts and content calendars.",
+    valueProposition: "Creates drafts of social posts and content calendars.",
+    output: "Draft posts, calendar entries, and scheduling steps ready for review.",
+    problem: "Keeps content planning from stalling when the team lacks time to start from scratch.",
+    readiness: "planned",
     overview:
       "The content agent is designed to draft marketing posts and organize a publishing calendar for LinkedIn, Instagram, and Facebook. Scheduling and publishing stay tied to the accounts you connect and the permissions those platforms grant. Engagement and audience figures appear only where the relevant APIs provide them.",
     capabilities: [
@@ -91,8 +114,11 @@ export const agents: Agent[] = [
     slug: "campaigns",
     name: "Campaign Generation & Publishing",
     navLabel: "Campaigns",
-    summary: "Move from a campaign idea toward launch with fewer manual steps.",
-    valueProposition: "Move from campaign idea to launch with less manual work.",
+    summary: "Helps plan and manage marketing campaigns.",
+    valueProposition: "Helps plan and manage marketing campaigns.",
+    output: "Campaign structure, assets, and launch steps prepared for approval.",
+    problem: "Reduces the manual work between a campaign idea and a reviewable launch plan.",
+    readiness: "planned",
     overview:
       "This agent is designed to help a team prepare marketing videos, advertising assets, and the structure of a campaign. Publishing is meant to go through supported channels and only with the permissions those channels require. Treat video generation and ad publishing as product capabilities under confirmation, not as a verified live service, until your launch checklist says otherwise.",
     capabilities: [
@@ -145,8 +171,11 @@ export const agents: Agent[] = [
     slug: "performance-marketing",
     name: "Performance Marketing",
     navLabel: "Performance",
-    summary: "See which ads look stronger or weaker, and review actions before they run.",
-    valueProposition: "Spot what works and act with more confidence.",
+    summary: "Reviews campaign performance and suggests improvements.",
+    valueProposition: "Reviews campaign performance and suggests improvements.",
+    output: "Performance comparisons and recommended next steps for review.",
+    problem: "Helps teams see which ads look stronger or weaker before changing anything.",
+    readiness: "planned",
     overview:
       "The performance agent is designed to watch advertising results, point out stronger and weaker ads, and support rule-based pausing or resuming. Rules use thresholds you configure, together with safeguards, permissions, and approvals. Recommendations are options for a person to consider. They are not a promise of return on ad spend, conversions, or revenue.",
     capabilities: [
@@ -198,8 +227,11 @@ export const agents: Agent[] = [
     slug: "sales-leads",
     name: "Sales & Lead Generation",
     navLabel: "Sales & leads",
-    summary: "Organize potential opportunities and spend follow-up time on better-fit leads.",
-    valueProposition: "Spend more time on qualified opportunities.",
+    summary: "Organizes leads, supports qualification, and recommends follow-ups.",
+    valueProposition: "Organizes leads, supports qualification, and recommends follow-ups.",
+    output: "Organized lead lists, qualification notes, and draft follow-up steps.",
+    problem: "Makes it easier to spend follow-up time on better-fit opportunities.",
+    readiness: "planned",
     overview:
       "This agent is designed to help teams discover potential business leads from data sources they are permitted to use, then organize, qualify, and prepare outreach. It is not a scraping tool and it is not a system for unsolicited messaging. Privacy, consent, and the rules of each channel still apply to every step.",
     capabilities: [
@@ -250,8 +282,11 @@ export const agents: Agent[] = [
     slug: "whatsapp",
     name: "WhatsApp Marketing",
     navLabel: "WhatsApp",
-    summary: "Prepare WhatsApp campaigns for people who have opted in to hear from you.",
-    valueProposition: "Reach customers through conversations they choose to receive.",
+    summary: "Supports approved customer conversations and follow-up workflows.",
+    valueProposition: "Supports approved customer conversations and follow-up workflows.",
+    output: "Permitted WhatsApp campaign drafts and follow-up workflows for opted-in contacts.",
+    problem: "Helps teams run customer messaging without inventing a cold-blast process.",
+    readiness: "planned",
     overview:
       "The WhatsApp agent is designed for permitted marketing: campaigns and conversations with people who have opted in, sent through an approved WhatsApp business integration. Template, opt-in, messaging, and opt-out requirements are part of the workflow. The channel is planned until a live integration is confirmed.",
     capabilities: [
@@ -301,8 +336,11 @@ export const agents: Agent[] = [
     slug: "email",
     name: "Email Marketing",
     navLabel: "Email",
-    summary: "Draft and organize email campaigns with unsubscribe and consent requirements in mind.",
-    valueProposition: "Create better email campaigns without starting from scratch.",
+    summary: "Helps prepare email campaigns and follow-up sequences.",
+    valueProposition: "Helps prepare email campaigns and follow-up sequences.",
+    output: "Email drafts, campaign structure, and follow-up sequences ready for approval.",
+    problem: "Gives teams a usable starting point for email campaigns without skipping consent rules.",
+    readiness: "planned",
     overview:
       "The email agent is designed to draft professional marketing emails and help manage campaigns and engagement workflows. Messages should go to people you have a valid reason to contact, and every marketing email needs a working unsubscribe. This page does not name a sending vendor as already connected.",
     capabilities: [
@@ -352,8 +390,11 @@ export const agents: Agent[] = [
     slug: "analytics",
     name: "GA4 Website Analytics",
     navLabel: "GA4 analytics",
-    summary: "Turn authorized Google Analytics 4 data into summaries that are easier to review.",
-    valueProposition: "Understand how visitors find and use your website.",
+    summary: "Explains website and marketing performance data.",
+    valueProposition: "Explains website and marketing performance data.",
+    output: "Plain-language summaries grounded in authorized analytics data.",
+    problem: "Makes website and marketing performance easier to review without inventing numbers.",
+    readiness: "planned",
     overview:
       "This part of the platform is designed to connect Google Analytics 4 when someone with access authorizes it, then show traffic, visitor behavior, engagement, and other website insights in plain language. Summaries come from the property you connect. They do not invent traffic, and they do not replace the GA4 interface when you need the underlying report.",
     capabilities: [
@@ -403,8 +444,11 @@ export const agents: Agent[] = [
     slug: "inbox",
     name: "Unified Inbox",
     navLabel: "Unified inbox",
-    summary: "Review customer conversations from supported channels in one place.",
-    valueProposition: "One inbox for your customer conversations.",
+    summary: "Helps teams manage customer conversations in one place.",
+    valueProposition: "Helps teams manage customer conversations in one place.",
+    output: "A shared conversation queue with draft replies and handoff options.",
+    problem: "Reduces switching between channels when customers reach out.",
+    readiness: "planned",
     overview:
       "The inbox agent is designed to bring conversations from supported WhatsApp, Instagram messaging, and Gmail connections into one list. Teams can organize incoming queries, start from an AI-written reply, and turn on automation only where that automation has been approved. A person can take over a conversation, and the actions should remain auditable.",
     capabilities: [

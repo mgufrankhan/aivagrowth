@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { AgentIcon } from "@/components/agent-icon";
-import { agentPath, type Agent } from "@/data/agents";
+import { agentPath, agentReadinessLabel, type Agent } from "@/data/agents";
 
 export function AgentCard({ agent }: { agent: Agent }) {
   return (
@@ -9,9 +9,14 @@ export function AgentCard({ agent }: { agent: Agent }) {
       href={agentPath(agent.slug)}
       className="panel group flex h-full flex-col p-5 transition-colors hover:border-navy/20"
     >
-      <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-blue/10 text-blue">
-        <AgentIcon slug={agent.slug} className="h-5 w-5" />
-      </span>
+      <div className="flex items-start justify-between gap-3">
+        <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-blue/10 text-blue">
+          <AgentIcon slug={agent.slug} className="h-5 w-5" />
+        </span>
+        <span className="rounded-full bg-blue/10 px-2.5 py-1 text-xs font-semibold text-navy">
+          {agentReadinessLabel(agent.readiness)}
+        </span>
+      </div>
       <h3 className="mt-4 text-lg font-semibold text-navy">{agent.name}</h3>
       <p className="mt-2 flex-1 text-sm leading-6 text-muted">{agent.summary}</p>
       <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-blue">
