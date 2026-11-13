@@ -53,6 +53,28 @@ body {
   background: #fff;
 }
 
+.panel-interactive {
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.panel-interactive:hover {
+  border-color: color-mix(in srgb, var(--navy) 20%, var(--line));
+  box-shadow: 0 18px 40px -28px rgba(7, 26, 67, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel-interactive {
+    transition: border-color 160ms ease;
+  }
+
+  .panel-interactive:hover {
+    box-shadow: none;
+  }
+}
+
 :focus-visible {
   outline: 2px solid var(--blue);
   outline-offset: 3px;

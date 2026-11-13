@@ -93,7 +93,10 @@ export default function HomePage() {
           />
           <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {audiences.map((audience) => (
-              <li key={audience.title} className="rounded-2xl border border-line bg-white p-6">
+              <li
+                key={audience.title}
+                className="rounded-2xl border border-line bg-white p-6 transition-colors hover:border-navy/20"
+              >
                 <h3 className="text-lg font-semibold text-navy">{audience.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-muted">{audience.detail}</p>
               </li>

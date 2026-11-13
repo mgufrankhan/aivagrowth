@@ -21,9 +21,19 @@ export function SiteHeader() {
 function HeaderControls({ pathname }: { pathname: string }) {
   const [agentsOpen, setAgentsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const menuId = useId();
   const closeMobile = useCallback(() => setMobileOpen(false), []);
+
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 8);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     if (!agentsOpen) {
@@ -48,9 +58,14 @@ function HeaderControls({ pathname }: { pathname: string }) {
   }, [agentsOpen]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur-md">
+    <header
+      className={cn(
+        "sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur-md transition-shadow",
+        scrolled && "shadow-[0_10px_30px_-20px_rgba(7,26,67,0.45)]",
+      )}
+    >
       <Container className="flex h-[var(--header-height)] items-center justify-between gap-3">
-          <Link href="/" aria-label="AIVA Growth home" className="rounded-md">
+        <Link href="/" aria-label="AIVA Growth home" className="rounded-md">
           <BrandLockup />
         </Link>
         <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
@@ -68,7 +83,10 @@ function HeaderControls({ pathname }: { pathname: string }) {
                   onClick={() => setAgentsOpen((open) => !open)}
                 >
                   AI Agents
-                  <ChevronDown className="h-4 w-4" aria-hidden="true" />
+                  <ChevronDown
+                    className={cn("h-4 w-4 transition-transform", agentsOpen && "rotate-180")}
+                    aria-hidden="true"
+                  />
                 </button>
                 <div
                   id={menuId}
@@ -78,6 +96,7 @@ function HeaderControls({ pathname }: { pathname: string }) {
                   <Link
                     href="/ai-agents"
                     className="block rounded-xl px-3 py-2 text-sm font-semibold text-navy hover:bg-background"
+                    onClick={() => setAgentsOpen(false)}
                   >
                     All AI agents
                   </Link>
@@ -88,6 +107,7 @@ function HeaderControls({ pathname }: { pathname: string }) {
                           href={agent.href}
                           className="block rounded-xl px-3 py-2 text-sm text-muted hover:bg-background hover:text-navy"
                           aria-current={pathname === agent.href ? "page" : undefined}
+                          onClick={() => setAgentsOpen(false)}
                         >
                           {agent.label}
                         </Link>
@@ -116,7 +136,7 @@ function HeaderControls({ pathname }: { pathname: string }) {
         </div>
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-navy lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-navy transition-colors hover:border-navy/20 lg:hidden"
           aria-expanded={mobileOpen}
           aria-controls="mobile-navigation"
           onClick={() => setMobileOpen((open) => !open)}
