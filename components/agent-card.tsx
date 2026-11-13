@@ -7,7 +7,7 @@ export function AgentCard({ agent }: { agent: Agent }) {
   return (
     <Link
       href={agentPath(agent.slug)}
-      className="panel group flex h-full flex-col p-5 transition duration-200 hover:-translate-y-0.5 hover:border-blue/30 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+      className="panel group flex h-full flex-col p-5 transition-colors hover:border-navy/20"
     >
       <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-blue/10 text-blue">
         <AgentIcon slug={agent.slug} className="h-5 w-5" />

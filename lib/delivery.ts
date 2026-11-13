@@ -3,6 +3,7 @@ import "server-only";
 import { appendFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import postgres from "postgres";
+import { interestLabel } from "@/data/offers";
 import { businessTypeLabel, challengeLabel } from "@/data/form-options";
 import type { DemoInquiry } from "@/lib/demo-schema";
 
@@ -122,7 +123,7 @@ async function deliverEmail(inquiry: DemoInquiry): Promise<DeliveryResult> {
     return { ok: false, message: FAILURE_MESSAGE };
   }
 
-  const subject = `AIVAgrowth inquiry from ${inquiry.companyName}`.replace(/[\r\n]+/g, " ").slice(0, 140);
+  const subject = `AIVA Growth inquiry from ${inquiry.companyName}`.replace(/[\r\n]+/g, " ").slice(0, 140);
 
   try {
     const response = await fetch("https://api.resend.com/emails", {
@@ -167,6 +168,7 @@ async function deliverDatabase(inquiry: DemoInquiry): Promise<DeliveryResult> {
         website,
         business_type,
         main_challenge,
+        interested_in,
         message
       ) values (
         ${inquiry.fullName},
@@ -175,6 +177,7 @@ async function deliverDatabase(inquiry: DemoInquiry): Promise<DeliveryResult> {
         ${inquiry.website || null},
         ${inquiry.businessType || null},
         ${inquiry.mainChallenge},
+        ${interestLabel(inquiry.interestedIn)},
         ${inquiry.message || null}
       )
     `;
@@ -211,6 +214,7 @@ function publicInquiry(inquiry: DemoInquiry) {
     website: inquiry.website || null,
     businessType: businessTypeLabel(inquiry.businessType) || null,
     mainChallenge: challengeLabel(inquiry.mainChallenge),
+    interestedIn: interestLabel(inquiry.interestedIn),
     message: inquiry.message || null,
     consent: true,
   };
@@ -219,7 +223,7 @@ function publicInquiry(inquiry: DemoInquiry) {
 function inquiryText(inquiry: DemoInquiry): string {
   const payload = publicInquiry(inquiry);
   return [
-    "New AIVAgrowth website inquiry",
+    "New AIVA Growth website inquiry",
     "",
     `Name: ${payload.fullName}`,
     `Work email: ${payload.workEmail}`,
@@ -227,6 +231,7 @@ function inquiryText(inquiry: DemoInquiry): string {
     `Website: ${payload.website ?? "Not provided"}`,
     `Business type: ${payload.businessType ?? "Not provided"}`,
     `Main challenge: ${payload.mainChallenge}`,
+    `Interested in: ${payload.interestedIn}`,
     "",
     "Message:",
     payload.message ?? "Not provided",

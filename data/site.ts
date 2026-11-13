@@ -34,17 +34,18 @@ function resolveCtaMode(value: string | undefined): CtaMode {
 }
 
 export const siteConfig = {
-  name: "AIVAgrowth",
+  name: "AIVA Growth",
   domain: "aivagrowth.com",
   url: "https://aivagrowth.com",
   brandExplanation: "AI Virtual Agents for Business Growth",
+  positioning: "AI Growth Workforce",
   tagline: "Your AI Team for Business Growth.",
   supportingLine:
-    "Create content, run campaigns, generate leads, engage customers, and understand performance from one AI-powered platform.",
+    "An AI growth workforce for B2B service businesses, powered by an AI marketing and sales agent platform.",
   heroSupport:
-    "Automate marketing, launch campaigns, generate leads, engage customers, and track results, all from one platform.",
+    "AIVA Growth brings AI agents together to help B2B service businesses create content, manage leads, follow up with prospects, and keep marketing and sales moving. Run the platform yourself, or let our team manage it for you.",
   description:
-    "Meet AIVAgrowth, your AI team for business growth. Explore agents for content, campaigns, lead generation, customer engagement, and analytics.",
+    "AI agents for B2B marketing and sales. Run AIVA Growth yourself with a monthly platform subscription, or choose fully managed AI growth services.",
   ctaMode: resolveCtaMode(process.env.NEXT_PUBLIC_CTA_MODE),
   locale: "en_US",
 } as const;
@@ -60,7 +61,7 @@ export function ctaLabel(mode: CtaMode = siteConfig.ctaMode): string {
     case "waitlist":
       return "Join Waitlist";
     case "demo":
-      return "Request a Demo";
+      return "Book a Demo";
     default: {
       const exhaustive: never = mode;
       return exhaustive;
@@ -73,7 +74,7 @@ export function ctaHeading(mode: CtaMode = siteConfig.ctaMode): string {
     case "waitlist":
       return "Join the Waitlist";
     case "demo":
-      return "Request a Demo";
+      return "Book a Demo";
     default: {
       const exhaustive: never = mode;
       return exhaustive;

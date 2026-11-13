@@ -7,31 +7,38 @@ import { useState, type ReactNode } from "react";
 import { useForm } from "react-hook-form";
 import { submitDemoRequest, type DemoActionResult } from "@/app/actions/demo";
 import { FormButton } from "@/components/button";
+import { interestOptions, type InterestValue } from "@/data/offers";
 import { businessTypes, mainChallenges } from "@/data/form-options";
 import { ctaHeading, ctaLabel, type CtaMode } from "@/data/site";
 import { demoFormSchema, type DemoFormValues } from "@/lib/demo-schema";
 import type { PublicFormStatus } from "@/lib/public-form";
 import { cn } from "@/lib/utils";
 
-const initialValues: DemoFormValues = {
-  fullName: "",
-  workEmail: "",
-  companyName: "",
-  website: "",
-  businessType: "",
-  mainChallenge: "",
-  message: "",
-  consent: false,
-  companyFax: "",
-};
+function createInitialValues(interestedIn: InterestValue | "" = ""): DemoFormValues {
+  return {
+    fullName: "",
+    workEmail: "",
+    companyName: "",
+    website: "",
+    businessType: "",
+    mainChallenge: "",
+    interestedIn,
+    message: "",
+    consent: false,
+    companyFax: "",
+  };
+}
 
 export function DemoForm({
   status,
   ctaMode,
+  initialInterest = "",
 }: {
   status: PublicFormStatus;
   ctaMode: CtaMode;
+  initialInterest?: InterestValue | "";
 }) {
+  const initialValues = createInitialValues(initialInterest);
   const [result, setResult] = useState<Extract<DemoActionResult, { ok: true }> | null>(null);
   const [formError, setFormError] = useState<string | null>(null);
   const {
@@ -185,6 +192,22 @@ export function DemoForm({
             ))}
           </select>
         </Field>
+        <Field label="Interested in" id="interested-in" error={errors.interestedIn?.message} required className="sm:col-span-2">
+          <select
+            id="interested-in"
+            className={inputClass(Boolean(errors.interestedIn))}
+            aria-invalid={Boolean(errors.interestedIn)}
+            aria-describedby={errors.interestedIn ? "interested-in-error" : undefined}
+            {...register("interestedIn")}
+          >
+            <option value="">Select an option</option>
+            {interestOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </Field>
         <Field label="Message" id="message" error={errors.message?.message} className="sm:col-span-2">
           <textarea
             id="message"
@@ -295,5 +318,5 @@ function inputClass(invalid: boolean): string {
 }
 
 function isField(key: string): key is keyof DemoFormValues {
-  return key in initialValues;
+  return key in createInitialValues();
 }

@@ -1,16 +1,15 @@
-import { ApprovalNote } from "@/components/approval-note";
 import { Button } from "@/components/button";
 import { Container, Section } from "@/components/container";
 import { CTASection } from "@/components/cta-section";
+import { ModelPaths } from "@/components/model-paths";
 import { PageHeader } from "@/components/page-header";
-import { WorkflowSteps } from "@/components/workflow-steps";
 import { ctaLabel } from "@/data/site";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
   title: "How It Works",
   description:
-    "See the AIVAgrowth workflow: connect permitted channels, set approval rules, review agent work, and check conversations, campaigns, leads, and performance.",
+    "See Self-Service and Fully Managed journeys for AIVA Growth, with approval gates, permissions, and review safeguards in both paths.",
   path: "/how-it-works",
 });
 
@@ -26,24 +25,21 @@ export default function HowItWorksPage() {
     <>
       <PageHeader
         eyebrow="How it works"
-        title="A workflow with a person at the approval step."
-        description="Onboarding is designed as four moves: connect what you are allowed to connect, set the rules, let agents prepare approved work, and review the result in one place."
+        title="Two journeys. Approvals stay in both."
+        description="Operate the AI platform yourself, or ask AIVA Growth to manage agreed workflows. Either path starts with scope, permissions, and a person at the review step."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "How It Works", path: "/how-it-works" },
         ]}
       >
         <Button href="/contact">{ctaLabel()}</Button>
-        <Button href="/ai-agents" variant="secondary">
-          Explore AI Agents
+        <Button href="/pricing" variant="secondary">
+          Explore plans
         </Button>
       </PageHeader>
       <Section>
         <Container>
-          <WorkflowSteps detailed />
-          <div className="mt-6">
-            <ApprovalNote />
-          </div>
+          <ModelPaths />
         </Container>
       </Section>
       <Section className="bg-white pt-0">
@@ -63,8 +59,8 @@ export default function HowItWorksPage() {
             <p className="mt-4 text-sm leading-6 text-[#d5e2f7]">
               The ongoing loop is review, not a handoff. Teams look at drafts waiting for approval, conversations
               that need a person, leads that are not qualified yet, and the performance signals a connected source
-              actually returns. The workspace is meant to make that review faster. It is not a promise that the work
-              runs without anyone watching it.
+              actually returns. In Fully Managed engagements, AIVA Growth helps operate that loop for agreed
+              workflows while you keep the business decisions.
             </p>
           </div>
         </Container>

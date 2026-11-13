@@ -4,9 +4,9 @@ import { integrations } from "@/data/integrations";
 export function IntegrationGrid() {
   return (
     <div className="mt-10">
-      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
         {integrations.map((item) => (
-          <li key={item.name} className="panel p-5">
+          <li key={item.name} className="bg-white p-5">
             <div className="flex items-start justify-between gap-3">
               <div>
                 <h3 className="text-lg font-semibold text-navy">{item.name}</h3>

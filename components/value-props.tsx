@@ -3,10 +3,10 @@ import { valuePoints, type ValuePointId } from "@/data/solutions";
 
 export function ValueProps() {
   return (
-    <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
       {valuePoints.map((point) => (
-        <li key={point.id} className="panel p-5">
-          <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-lavender text-blue">
+        <li key={point.id} className="bg-white p-6">
+          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-lavender text-blue">
             <ValueIcon id={point.id} />
           </span>
           <h3 className="mt-4 text-lg font-semibold text-navy">{point.title}</h3>

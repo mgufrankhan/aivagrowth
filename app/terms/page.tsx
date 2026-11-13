@@ -8,7 +8,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Draft Terms of Use",
   description:
-    "Draft terms for using the AIVAgrowth marketing website. This document needs legal review before it is treated as final.",
+    "Draft terms for using the AIVA Growth marketing website. This document needs legal review before it is treated as final.",
   path: "/terms",
   index: false,
 });
@@ -31,7 +31,7 @@ export default function TermsPage() {
           <p>Effective date: not yet adopted. Governing law: to be confirmed by counsel.</p>
           <LegalBlock title="The website and the product">
             <p>
-              This website describes AIVAgrowth, an AI-powered marketing and sales platform that is being built for
+              This website describes AIVA Growth, an AI-powered marketing and sales platform that is being built for
               B2B service businesses. Pages may describe planned workflows. A description is not a warranty that a
               channel, an automation, or a public launch is available to you.
             </p>

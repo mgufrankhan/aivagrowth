@@ -1,4 +1,4 @@
-# AIVAgrowth website
+# AIVA Growth website
 
 Marketing site for [aivagrowth.com](https://aivagrowth.com). It describes an AI marketing and sales workspace for B2B service businesses. It does not include a signed-in product, invented customers, prices, or logos of other companies.
 

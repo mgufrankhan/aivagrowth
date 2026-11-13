@@ -9,7 +9,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "AI Agents",
   description:
-    "Explore eight AIVAgrowth agents for content, campaigns, performance, leads, WhatsApp, email, GA4 analytics, and a unified inbox.",
+    "Explore eight AIVA Growth agents for content, campaigns, performance, leads, WhatsApp, email, GA4 analytics, and a unified inbox.",
   path: "/ai-agents",
 });
 
@@ -19,7 +19,7 @@ export default function AgentsPage() {
       <PageHeader
         eyebrow="AI agents"
         title="Eight agents. One growth workspace."
-        description="Each agent is aimed at a job a service business already does: creating content, preparing campaigns, reviewing ads, organizing leads, messaging opted-in contacts, drafting email, reading the website, or answering customers. They are described as platform capabilities, not as a claim that every workflow is live in your account."
+        description="Each agent is aimed at a job a service business already does: creating content, preparing campaigns, reviewing ads, organizing leads, messaging opted-in contacts, drafting email, reading the website, or answering customers. They are platform capabilities and are not automatically included in every plan."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "AI Agents", path: "/ai-agents" },

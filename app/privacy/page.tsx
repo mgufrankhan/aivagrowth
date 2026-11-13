@@ -8,7 +8,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Draft Privacy Policy",
   description:
-    "Draft privacy policy for the AIVAgrowth marketing website. This document needs legal review before it is treated as final.",
+    "Draft privacy policy for the AIVA Growth marketing website. This document needs legal review before it is treated as final.",
   path: "/privacy",
   index: false,
 });
@@ -31,7 +31,7 @@ export default function PrivacyPage() {
           <p>Effective date: not yet adopted. Review date: not set.</p>
           <LegalBlock title="Who this draft is about">
             <p>
-              The legal entity that operates AIVAgrowth has not been published on this website. Until that name,
+              The legal entity that operates AIVA Growth has not been published on this website. Until that name,
               address, and contact role are confirmed, this draft cannot identify a controller or a processor. Do not
               treat the domain name as that missing information.
             </p>

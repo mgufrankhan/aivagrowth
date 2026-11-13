@@ -2,6 +2,7 @@ import { Button } from "@/components/button";
 import { Container, Section } from "@/components/container";
 import { CTASection } from "@/components/cta-section";
 import { PageHeader } from "@/components/page-header";
+import { offers } from "@/data/offers";
 import { audiences, solutionWorkflows } from "@/data/solutions";
 import { ctaLabel } from "@/data/site";
 import { createPageMetadata } from "@/lib/seo";
@@ -9,7 +10,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Solutions",
   description:
-    "Explore how B2B service businesses can use AIVAgrowth to prepare content, campaigns, leads, and customer conversations with human review.",
+    "Explore how B2B service businesses can use AIVA Growth through Self-Service or Fully Managed delivery for content, campaigns, leads, and conversations.",
   path: "/solutions",
 });
 
@@ -19,15 +20,15 @@ export default function SolutionsPage() {
       <PageHeader
         eyebrow="Solutions"
         title="Use cases for B2B service businesses."
-        description="Agencies, consultancies, IT services, professional services, and similar firms often share the same workload: publish consistently, launch campaigns carefully, qualify leads, and answer customers. These examples stay general on purpose."
+        description="Agencies, consultancies, IT services, professional services, and similar firms often share the same workload: publish consistently, launch campaigns carefully, qualify leads, and answer customers. Deliver those workflows yourself on the platform, or ask AIVA Growth to manage agreed work."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Solutions", path: "/solutions" },
         ]}
       >
         <Button href="/contact">{ctaLabel()}</Button>
-        <Button href="/ai-agents" variant="secondary">
-          Explore AI Agents
+        <Button href="/pricing" variant="secondary">
+          Explore plans
         </Button>
       </PageHeader>
       <Section>
@@ -48,7 +49,8 @@ export default function SolutionsPage() {
           <h2 className="text-3xl font-semibold tracking-tight text-navy">Workflows teams can explore</h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-muted">
             Nothing here depends on an industry-specific feature. Each workflow still needs the relevant account,
-            permission, and a person where the approval rule says so.
+            permission, and a person where the approval rule says so. The same workflows can be operated by your team
+            or managed by AIVA Growth under an agreed scope.
           </p>
           <ol className="mt-8 grid gap-4 md:grid-cols-2">
             {solutionWorkflows.map((item, index) => (
@@ -59,11 +61,21 @@ export default function SolutionsPage() {
               </li>
             ))}
           </ol>
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            <article className="rounded-2xl border border-line p-5">
+              <h3 className="font-semibold text-navy">{offers.selfService.label}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted">{offers.selfService.oneLiner}</p>
+            </article>
+            <article className="rounded-2xl border border-line p-5">
+              <h3 className="font-semibold text-navy">{offers.managed.label}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted">{offers.managed.oneLiner}</p>
+            </article>
+          </div>
         </Container>
       </Section>
       <CTASection
         title="Tell us which workflow is heaviest."
-        description="A short description of how your team publishes, follows up, and replies is enough to start a useful conversation."
+        description="A short description of how your team publishes, follows up, and replies is enough to start a useful conversation about Self-Service or Fully Managed."
       />
     </>
   );

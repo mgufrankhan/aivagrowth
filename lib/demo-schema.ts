@@ -1,8 +1,10 @@
 import { z } from "zod";
+import { interestOptions } from "@/data/offers";
 import { businessTypes, mainChallenges } from "@/data/form-options";
 
 const businessTypeValues: readonly string[] = businessTypes.map((item) => item.value);
 const challengeValues: readonly string[] = mainChallenges.map((item) => item.value);
+const interestValues: readonly string[] = interestOptions.map((item) => item.value);
 
 const optionalWebsite = z
   .string()
@@ -27,6 +29,9 @@ export const demoFormSchema = z.object({
   }),
   mainChallenge: z.string().refine((value) => challengeValues.includes(value) && value !== "", {
     message: "Select the main challenge you want to discuss.",
+  }),
+  interestedIn: z.string().refine((value) => interestValues.includes(value), {
+    message: "Select what you are interested in.",
   }),
   message: z.string().trim().max(2000, "Keep the message under 2,000 characters."),
   consent: z.boolean().refine((value) => value, {

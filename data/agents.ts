@@ -84,7 +84,7 @@ export const agents: Agent[] = [
     seo: {
       title: "Content Generation & Scheduling",
       description:
-        "Plan, create, and manage LinkedIn, Instagram, and Facebook content in one AIVAgrowth workspace, with review before publishing.",
+        "Plan, create, and manage LinkedIn, Instagram, and Facebook content in one AIVA Growth workspace, with review before publishing.",
     },
   },
   {
@@ -138,7 +138,7 @@ export const agents: Agent[] = [
     seo: {
       title: "Campaign Generation & Publishing",
       description:
-        "Prepare campaign assets and publishing steps with AIVAgrowth, then review performance. Launch still depends on approval and channel permissions.",
+        "Prepare campaign assets and publishing steps with AIVA Growth, then review performance. Launch still depends on approval and channel permissions.",
     },
   },
   {
@@ -191,7 +191,7 @@ export const agents: Agent[] = [
     seo: {
       title: "Performance Marketing",
       description:
-        "Review which ads look stronger or weaker and set approval rules before any pause or resume. AIVAgrowth does not promise ROAS.",
+        "Review which ads look stronger or weaker and set approval rules before any pause or resume. AIVA Growth does not promise ROAS.",
     },
   },
   {
@@ -243,7 +243,7 @@ export const agents: Agent[] = [
     seo: {
       title: "Sales & Lead Generation",
       description:
-        "Organize permitted business leads and prepare outreach you can review. AIVAgrowth does not scrape sites or send unsolicited messages.",
+        "Organize permitted business leads and prepare outreach you can review. AIVA Growth does not scrape sites or send unsolicited messages.",
     },
   },
   {

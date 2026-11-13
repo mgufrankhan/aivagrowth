@@ -2,13 +2,14 @@ import { Button } from "@/components/button";
 import { Container, Section } from "@/components/container";
 import { CTASection } from "@/components/cta-section";
 import { PageHeader } from "@/components/page-header";
+import { offers } from "@/data/offers";
 import { ctaLabel, siteConfig } from "@/data/site";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
   title: "About",
   description:
-    "Learn what AIVAgrowth is building: AI virtual agents that help B2B service businesses with marketing and sales, with people still in control.",
+    "Learn what AIVA Growth is building: an AI growth workforce for B2B service businesses, offered as Self-Service or Fully Managed.",
   path: "/about",
 });
 
@@ -17,8 +18,8 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="About"
-        title="A practical AI team for service businesses that need to grow."
-        description="AIVAgrowth is being built for B2B service-based SMEs that spend too much of the week recreating the same marketing and sales work in separate tools."
+        title="An AI growth workforce for service businesses."
+        description="AIVA Growth is powered by one AI marketing and sales agent platform. It is not a conventional marketing agency and not a generic chatbot."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "About", path: "/about" },
@@ -31,7 +32,7 @@ export default function AboutPage() {
           <div className="space-y-4 text-base leading-7 text-muted">
             <h2 className="text-2xl font-semibold text-navy">The name</h2>
             <p>
-              AIVAgrowth is a brand name. The idea behind it is {siteConfig.brandExplanation}. That phrase is an
+              AIVA Growth is a brand name. The idea behind it is {siteConfig.brandExplanation}. That phrase is an
               explanation, not a claim that each letter is a formal acronym.
             </p>
             <p>
@@ -47,16 +48,26 @@ export default function AboutPage() {
               gets published, sent, or changed.
             </p>
             <p>
-              This website describes that direction. It does not invent customers, results, prices, or a launch date.
-              If a channel or an automation is not confirmed, the copy says it is planned or that it depends on
-              permission.
+              Customers can operate the platform themselves through a monthly SaaS subscription, or choose Fully
+              Managed AI Growth where the AIVA Growth team operates agreed workflows with customer oversight.
             </p>
           </div>
         </Container>
       </Section>
       <Section className="bg-white pt-0">
         <Container>
-          <h2 className="text-2xl font-semibold text-navy">What this site will not do</h2>
+          <h2 className="text-2xl font-semibold text-navy">Two ways to work with us</h2>
+          <ul className="mt-6 grid gap-4 md:grid-cols-2">
+            <li className="rounded-2xl border border-line p-5">
+              <h3 className="font-semibold text-navy">{offers.selfService.label}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted">{offers.selfService.oneLiner}</p>
+            </li>
+            <li className="rounded-2xl border border-line p-5">
+              <h3 className="font-semibold text-navy">{offers.managed.label}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted">{offers.managed.oneLiner}</p>
+            </li>
+          </ul>
+          <h2 className="mt-12 text-2xl font-semibold text-navy">What this site will not do</h2>
           <ul className="mt-6 grid gap-4 md:grid-cols-3">
             {[
               "Invent testimonials, logos, usage numbers, or certifications.",

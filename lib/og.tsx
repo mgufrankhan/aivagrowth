@@ -21,8 +21,7 @@ export function createShareImage(size = shareImageSize) {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", fontSize: 42, fontWeight: 700 }}>
-          <span style={{ color: "#FFFFFF" }}>AIVA</span>
-          <span style={{ color: "#20C8F4" }}>growth</span>
+          <span style={{ color: "#FFFFFF" }}>AIVA Growth</span>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
           <div

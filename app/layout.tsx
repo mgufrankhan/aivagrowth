@@ -19,8 +19,8 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "AIVAgrowth | AI Agents for Marketing & Sales Growth",
-    template: "%s | AIVAgrowth",
+    default: "AIVA Growth | Your AI Team for Business Growth",
+    template: "%s | AIVA Growth",
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,

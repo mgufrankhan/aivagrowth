@@ -38,6 +38,7 @@ export async function submitDemoRequest(input: unknown): Promise<DemoActionResul
     website: parsed.data.website,
     businessType: parsed.data.businessType,
     mainChallenge: parsed.data.mainChallenge,
+    interestedIn: parsed.data.interestedIn,
     message: parsed.data.message,
     consent: true,
   };

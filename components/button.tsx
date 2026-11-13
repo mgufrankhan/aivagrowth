@@ -5,10 +5,9 @@ import { cn } from "@/lib/utils";
 type Variant = "primary" | "secondary" | "inverse" | "inverse-secondary";
 
 const variants: Record<Variant, string> = {
-  primary:
-    "bg-blue text-white shadow-[0_12px_24px_-14px_rgba(18,101,245,0.9)] hover:bg-[#0d57d4]",
-  secondary: "border border-line bg-white text-navy shadow-sm hover:border-blue/40 hover:bg-lavender",
-  inverse: "bg-white text-navy shadow-[0_12px_24px_-16px_rgba(0,0,0,0.45)] hover:bg-[#f3f6ff]",
+  primary: "bg-blue text-white hover:bg-[#0d57d4]",
+  secondary: "border border-line bg-white text-navy hover:border-navy/20 hover:bg-white",
+  inverse: "bg-white text-navy hover:bg-[#f3f6ff]",
   "inverse-secondary": "border border-white/35 bg-white/5 text-white hover:bg-white/10",
 };
 

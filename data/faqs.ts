@@ -5,43 +5,43 @@ export type Faq = {
 
 export const faqs: Faq[] = [
   {
-    question: "What is AIVAgrowth?",
+    question: "What is AIVA Growth?",
     answer:
-      "AIVAgrowth is an AI-powered marketing and sales platform designed for business growth. Specialized agents prepare content, campaigns, lead workflows, customer conversations, and performance reviews in one workspace. The name expresses a brand idea, AI Virtual Agents for Business Growth. It is not a strict letter-by-letter acronym, and it is not positioned as an ERP or a general-purpose chatbot.",
+      "AIVA Growth is an AI growth workforce for B2B service businesses. It brings specialized AI agents together to support marketing, lead management, customer conversations, and reporting.",
   },
   {
-    question: "Who is it for?",
+    question: "What are the two ways to use AIVA Growth?",
     answer:
-      "It is aimed at B2B service-based small and mid-sized businesses. That includes agencies, consultancies, IT services, professional services, and other service firms with a similar marketing and sales workload. The workflows are general. This site does not promise features built for one industry.",
+      "You can operate the AI platform yourself with a monthly SaaS subscription, or choose a fully managed monthly service where our team operates agreed workflows with your oversight.",
   },
   {
-    question: "How do the agents work?",
+    question: "What is the difference between the plans?",
     answer:
-      "Each agent focuses on one part of the growth workflow, such as content, campaigns, leads, messaging, or website analytics. They are designed to prepare work a person can review. What you can actually run depends on the accounts you connect, the permissions those platforms grant, and the approval rules you set.",
+      "With Self-Service, your team runs the workflows. With Fully Managed, our team handles the agreed setup and ongoing operations. Both use the AIVA Growth platform.",
   },
   {
-    question: "Can a person approve work before it goes out?",
+    question: "Can I approve content and messages before they are sent?",
     answer:
-      "Yes. The workflow is built around goals, preferences, and approval rules. Publishing, sending messages, and changing ads are meant to follow the permissions and review settings you choose. The platform should not be understood as a system that spends ad budget or contacts people on its own without those controls.",
+      "Yes. Workflows are designed around permissions and approval rules. What can be automated depends on the supported integrations and the controls agreed for your account.",
   },
   {
-    question: "Which integrations are supported?",
+    question: "Are advertising and messaging charges included?",
     answer:
-      "The intended channel categories are LinkedIn, Instagram, Facebook, WhatsApp, Gmail, and Google Analytics 4. Each one has a status in the site configuration. Planned means the connection is part of the product direction, not that it is switched on for every account. A connection also depends on the other company’s permissions. Listing a name here is not a partnership or an endorsement.",
+      "Advertising spend and external messaging or platform fees are separate unless explicitly included in your proposal.",
+  },
+  {
+    question: "Is every agent and integration available today?",
+    answer:
+      "No. Some capabilities and integrations are planned or subject to configuration. We confirm what is available and suitable for your workflow during the demo.",
+  },
+  {
+    question: "How do I get started?",
+    answer:
+      "Book a demo and tell us about your business. We’ll discuss whether Self-Service or Fully Managed is the better fit and confirm scope and availability.",
   },
   {
     question: "How is information on this website handled?",
     answer:
       "The demo form collects the details you type into it. An inquiry is delivered only when this site has a working email, database, or webhook destination configured. If delivery is not configured, the form will say so and will not pretend the message was sent. Product security, retention, and processing terms for the application itself still need to be confirmed. Read the draft Privacy Policy, which has not had legal review. Do not send sensitive personal data through the form.",
-  },
-  {
-    question: "How do I request access?",
-    answer:
-      "Use the demo or waitlist form and describe your marketing and sales workflow. Submitting the form does not create an account, and it does not by itself mean the product is publicly available. A follow-up can happen only after the inquiry reaches the destination configured for this site.",
-  },
-  {
-    question: "Is the product generally available?",
-    answer:
-      "This website describes the product direction and the capabilities being built. It does not confirm a public launch, a customer count, or that every workflow is live. Ask for a demo if you want to talk about access.",
   },
 ];

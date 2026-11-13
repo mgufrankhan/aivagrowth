@@ -48,9 +48,9 @@ function HeaderControls({ pathname }: { pathname: string }) {
   }, [agentsOpen]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line/80 bg-white/80 shadow-[0_12px_30px_-24px_rgba(7,26,67,0.7)] backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur-md">
       <Container className="flex h-[var(--header-height)] items-center justify-between gap-3">
-        <Link href="/" aria-label="AIVAgrowth home" className="rounded-md">
+          <Link href="/" aria-label="AIVA Growth home" className="rounded-md">
           <BrandLockup />
         </Link>
         <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
@@ -132,7 +132,7 @@ function HeaderControls({ pathname }: { pathname: string }) {
 
 export function HeaderFallback() {
   return (
-    <div className="h-[var(--header-height)] border-b border-line/80 bg-white/80 shadow-[0_12px_30px_-24px_rgba(7,26,67,0.7)] backdrop-blur-md">
+    <div className="h-[var(--header-height)] border-b border-line bg-white/90 backdrop-blur-md">
       <Container className="flex h-full items-center">
         <BrandLockup />
       </Container>

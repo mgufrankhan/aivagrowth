@@ -28,8 +28,8 @@ export function PlaceholderMark({
 export function Wordmark({ tone = "default" }: { tone?: Tone }) {
   return (
     <span className="text-[1.15rem] font-semibold tracking-[-0.04em]" aria-hidden="true">
-      <span className={tone === "inverse" ? "text-white" : "text-navy"}>AIVA</span>
-      <span className={tone === "inverse" ? "text-cyan" : "text-blue"}>growth</span>
+      <span className={tone === "inverse" ? "text-white" : "text-navy"}>AIVA </span>
+      <span className={tone === "inverse" ? "text-cyan" : "text-blue"}>Growth</span>
     </span>
   );
 }
@@ -48,7 +48,7 @@ function LockupImage({
   return (
     <Image
       src={src}
-      alt="AIVAgrowth"
+      alt="AIVA Growth"
       width={width}
       height={height}
       priority={priority}

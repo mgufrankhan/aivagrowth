@@ -4,7 +4,7 @@ export function DraftNotice({ documentName }: { documentName: string }) {
       <p className="text-sm font-semibold">Draft for legal review</p>
       <p className="mt-2 text-sm leading-6">
         This {documentName} has not been reviewed by qualified counsel and is not a final policy. Do not treat it
-        as legal advice or as the binding terms of AIVAgrowth until it is reviewed and published as final.
+        as legal advice or as the binding terms of AIVA Growth until it is reviewed and published as final.
       </p>
     </aside>
   );
