@@ -1,3 +1,4 @@
+import { ChannelIcon } from "@/components/channel-icon";
 import { StatusBadge } from "@/components/status-badge";
 import { integrations } from "@/data/integrations";
 
@@ -6,11 +7,14 @@ export function IntegrationGrid() {
     <div className="mt-10">
       <ul className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
         {integrations.map((item) => (
-          <li key={item.name} className="bg-white p-5">
+          <li key={item.id} className="bg-white p-5">
             <div className="flex items-start justify-between gap-3">
-              <div>
-                <h3 className="text-lg font-semibold text-navy">{item.name}</h3>
-                <p className="mt-1 text-sm text-muted">{item.category}</p>
+              <div className="flex min-w-0 items-start gap-3">
+                <ChannelIcon id={item.id} />
+                <div className="min-w-0">
+                  <h3 className="font-display text-lg font-semibold text-navy">{item.name}</h3>
+                  <p className="mt-1 text-sm text-muted">{item.category}</p>
+                </div>
               </div>
               <StatusBadge status={item.status} />
             </div>
@@ -19,9 +23,8 @@ export function IntegrationGrid() {
         ))}
       </ul>
       <p className="mt-4 text-sm leading-6 text-muted">
-        Names are written as text on purpose. This site does not use official logos and does not imply a partnership
-        or endorsement. Planned means the connection is part of the product direction, not that it is available in
-        every account today. Statuses are edited in the site data.
+        Channel marks identify supported integrations. They do not imply a partnership or endorsement. Pilot means
+        limited availability. Statuses are edited in the site data.
       </p>
     </div>
   );

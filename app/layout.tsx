@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Syne } from "next/font/google";
+import { Geist, Space_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
 import { Suspense } from "react";
 import { AnalyticsLoader } from "@/components/analytics-loader";
@@ -16,8 +16,8 @@ const geistSans = Geist({
   display: "swap",
 });
 
-const syne = Syne({
-  variable: "--font-syne",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
   display: "swap",
 });
@@ -48,7 +48,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${syne.variable} h-full antialiased`}>
+    <html lang="en" className={`${geistSans.variable} ${spaceGrotesk.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <a
           href="#main"
