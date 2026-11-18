@@ -9,10 +9,10 @@ export type WorkflowStep = {
 export const workflowSteps: WorkflowStep[] = [
   {
     step: "01",
-    title: "Connect your business channels and data sources",
+    title: "Connect Instagram, Facebook, LinkedIn, and WhatsApp",
     detail:
-      "Bring in the channels and data sources you want to use, subject to supported integration availability and the access each platform allows.",
-    youDo: "Choose accounts you are allowed to connect and grant only the access the workflow needs.",
+      "Connect the social accounts you are allowed to manage. After they are connected, performance and analytics can show on AIVA Growth. WhatsApp is in pilot.",
+    youDo: "Choose Instagram, Facebook, LinkedIn, and WhatsApp accounts you are allowed to connect, and grant only the access the workflow needs.",
     platformDoes:
       "The workspace is designed to keep those connections together and show which sources an agent can use.",
   },
@@ -36,9 +36,9 @@ export const workflowSteps: WorkflowStep[] = [
   },
   {
     step: "04",
-    title: "Review conversations, campaigns, leads, and performance",
+    title: "Review performance and analytics on AIVA Growth",
     detail:
-      "Use the same workspace to look at replies, campaign status, the lead list, and the website or ad signals that connected sources provide.",
+      "After the accounts are connected, use the same workspace to look at social performance, replies, campaign status, the lead list, and the analytics those sources return.",
     youDo: "Decide what to adjust, what to pause, and what needs a person to take over.",
     platformDoes:
       "The workspace is designed to put those queues and summaries next to each other so the team is not reconstructing the story from separate tools.",

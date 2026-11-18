@@ -41,7 +41,7 @@ export default function HomePage() {
           <SectionHeading
             id="help-heading"
             eyebrow="What AIVA Growth helps you do"
-            title="Content, campaigns, leads, follow-ups, and reporting."
+            title="Content, campaigns, leads, follow-ups, SEO, and reporting."
             description="Concrete marketing and sales work—not architecture jargon."
           />
           <OutcomeProps />
@@ -68,7 +68,7 @@ export default function HomePage() {
             id="agents-heading"
             eyebrow="Meet the AI agents"
             title="Specialized help for everyday growth work."
-            description="Six agents are live on Growth. Performance Marketing and WhatsApp are in pilot."
+            description="Six agents are live on Growth. Performance Marketing and WhatsApp are in pilot. Website SEO is planned."
           />
           <AgentGrid />
         </Container>

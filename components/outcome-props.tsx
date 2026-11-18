@@ -2,7 +2,7 @@ import { helpAreas } from "@/data/offers";
 
 export function OutcomeProps() {
   return (
-    <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+    <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {helpAreas.map((item) => (
         <li
           key={item.id}

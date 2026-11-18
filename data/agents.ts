@@ -6,6 +6,7 @@ export const agentSlugs = [
   "whatsapp",
   "email",
   "analytics",
+  "seo",
   "inbox",
 ] as const;
 
@@ -438,6 +439,63 @@ export const agents: Agent[] = [
       title: "GA4 Website Analytics",
       description:
         "Connect Google Analytics 4 when authorized and read traffic, behavior, and engagement in plain language.",
+    },
+  },
+  {
+    slug: "seo",
+    name: "Website SEO",
+    navLabel: "SEO",
+    summary: "Prepares on-page SEO recommendations for a website your team can review.",
+    valueProposition: "Prepares on-page SEO recommendations for a website your team can review.",
+    output: "Draft titles, meta descriptions, heading notes, and an on-page checklist for approval.",
+    problem: "Gives teams a starting point for website SEO without changing the live site on its own.",
+    readiness: "planned",
+    overview:
+      "The SEO agent is designed to review pages you are allowed to edit and draft on-page improvements: titles, meta descriptions, headings, internal links, and a short checklist. Recommendations stay drafts until a person approves them. This agent does not promise rankings, traffic, or backlinks, and it does not publish changes to a live website by itself. It is planned and is not part of the Growth plan yet.",
+    capabilities: [
+      {
+        title: "Review pages you can edit",
+        detail:
+          "Read the pages, titles, and headings your team provides or connects. The review covers on-page structure, not a crawl of the whole public web.",
+      },
+      {
+        title: "Draft search titles and descriptions",
+        detail:
+          "Suggest a title and meta description a teammate can edit. The draft is a recommendation, not a live change on the site.",
+      },
+      {
+        title: "List the next on-page fixes",
+        detail:
+          "Prepare notes for headings, internal links, and missing page descriptions so the team can decide what to update.",
+      },
+    ],
+    workflow: [
+      {
+        title: "Name the site and the pages",
+        detail: "Start with the website you own and the pages you want reviewed. Do not point the workflow at a site you cannot edit.",
+      },
+      {
+        title: "Share the current page copy",
+        detail: "Provide the titles, descriptions, and headings already on those pages so the draft can be compared with them.",
+      },
+      {
+        title: "Review the recommendations",
+        detail: "Edit anything that overclaims. A suggested title is not approved copy, and it is not a ranking guarantee.",
+      },
+      {
+        title: "Apply changes only after approval",
+        detail: "A person updates the website, or asks for that update in a managed workflow. The agent does not publish the change itself.",
+      },
+    ],
+    safeguards: [
+      "Website SEO is planned. It is not included in the Growth plan until that status changes.",
+      "The agent does not promise search rankings, traffic, or backlinks.",
+      "Nothing is published to the live site until a person approves the change.",
+    ],
+    seo: {
+      title: "Website SEO",
+      description:
+        "See how the planned AIVA Growth SEO agent drafts titles, meta descriptions, and on-page fixes for review. It does not promise rankings.",
     },
   },
   {

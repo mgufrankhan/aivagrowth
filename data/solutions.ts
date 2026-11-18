@@ -48,6 +48,11 @@ export const solutionWorkflows = [
       "Read supported WhatsApp, Instagram messaging, and Gmail conversations together. Use a suggested reply as a draft, and hand the thread to a person whenever it needs one.",
   },
   {
+    title: "Prepare website SEO for review",
+    detail:
+      "Draft titles, meta descriptions, and on-page notes for pages you can edit. A person approves any change before it goes on the live site. Rankings are not promised.",
+  },
+  {
     title: "Read the website in plain language",
     detail:
       "When an authorized user connects Google Analytics 4, review traffic, behavior, and engagement without treating the summary as a substitute for the source report.",

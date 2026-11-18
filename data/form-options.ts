@@ -16,6 +16,7 @@ export const mainChallenges = [
   { value: "conversations", label: "Keeping up with customer conversations" },
   { value: "email", label: "Running email marketing" },
   { value: "analytics", label: "Making sense of website analytics" },
+  { value: "seo", label: "Improving website SEO" },
   { value: "connected", label: "Connecting marketing and sales work" },
   { value: "unsure", label: "Not sure yet" },
 ] as const;

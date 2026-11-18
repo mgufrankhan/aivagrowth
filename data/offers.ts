@@ -19,6 +19,7 @@ export const offers = {
     details: [
       "3 user seats and 5 connected accounts",
       "6 live agents included; 2 in pilot",
+      "Website SEO agent is planned",
       "1,000 AI assists per month",
     ] as const,
     pricingLabel: "Self-Service AI Platform",
@@ -37,6 +38,7 @@ export const offers = {
       "Pilot agents: Performance Marketing, WhatsApp",
       "Channels: LinkedIn, Instagram, Facebook, Gmail, Google Analytics 4",
       "WhatsApp Business messaging in pilot",
+      "Pilot ad accounts: Meta Ads and Google Ads. Ad spend is separate.",
       "3 user seats",
       "Up to 5 connected accounts",
       "1,000 AI assists per month",
@@ -136,6 +138,11 @@ export const helpAreas = [
     title: "Reporting",
     detail: "Review activity and performance signals before deciding what to do next.",
   },
+  {
+    id: "seo",
+    title: "Website SEO",
+    detail: "Draft on-page titles, descriptions, and fixes for review. This agent is planned.",
+  },
 ] as const;
 
 export const pricingComparison = [
@@ -153,7 +160,7 @@ export const pricingComparison = [
   },
   {
     label: "Included agents",
-    selfService: "6 live · 2 pilot",
+    selfService: "6 live · 2 pilot · SEO planned",
     managed: "Same platform; AIVA Growth operates agreed workflows",
   },
   {
@@ -176,8 +183,9 @@ export const pricingComparison = [
 export const selfServiceSteps = [
   {
     step: "01",
-    title: "Connect supported business accounts.",
-    detail: "Link LinkedIn, Instagram, Facebook, Gmail, and GA4 (WhatsApp in pilot).",
+    title: "Connect your social accounts.",
+    detail:
+      "Connect Instagram, Facebook, LinkedIn, and WhatsApp. After that, performance and analytics show on AIVA Growth. WhatsApp is in pilot.",
   },
   {
     step: "02",
@@ -191,8 +199,9 @@ export const selfServiceSteps = [
   },
   {
     step: "04",
-    title: "Track results in the platform.",
-    detail: "Review activity and performance from your connected accounts.",
+    title: "See performance and analytics on AIVA Growth.",
+    detail:
+      "Review social performance, campaign signals, and website analytics from the accounts you connected.",
   },
 ] as const;
 

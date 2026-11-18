@@ -18,7 +18,7 @@ export const dashboardTabs = [
   {
     id: "agents",
     label: "Agents",
-    intro: "The eight workspace areas. This list is a map of the product, not a live status board.",
+    intro: "The nine workspace areas. This list is a map of the product, not a live status board.",
     metrics: [],
     rows: [
       "Content — drafts and calendar",
@@ -28,6 +28,7 @@ export const dashboardTabs = [
       "WhatsApp — opted-in conversation drafts",
       "Email — campaign copy in edit",
       "Analytics — GA4 summary placeholder",
+      "SEO — on-page recommendations still in draft",
       "Inbox — threads assigned to a person",
     ],
   },

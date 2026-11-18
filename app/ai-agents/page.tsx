@@ -9,7 +9,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "AI Agents",
   description:
-    "Explore eight AIVA Growth agents for content, campaigns, performance, leads, WhatsApp, email, analytics, and a unified inbox.",
+    "Explore AIVA Growth agents for content, campaigns, performance, leads, WhatsApp, email, website SEO, analytics, and a unified inbox.",
   path: "/ai-agents",
 });
 
@@ -19,7 +19,7 @@ export default function AgentsPage() {
       <PageHeader
         eyebrow="AI agents"
         title="What each agent helps you produce."
-        description="Six agents are live on the Growth plan. Performance Marketing and WhatsApp are in pilot. Status badges show readiness for each workflow."
+        description="Six agents are live on the Growth plan. Performance Marketing and WhatsApp are in pilot. Website SEO is planned. Status badges show readiness for each workflow."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "AI Agents", path: "/ai-agents" },

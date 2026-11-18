@@ -6,6 +6,7 @@ import {
   Mail,
   Megaphone,
   MessageCircle,
+  Search,
   Users,
 } from "lucide-react";
 import type { AgentSlug } from "@/data/agents";
@@ -26,6 +27,8 @@ export function AgentIcon({ slug, className }: { slug: AgentSlug; className?: st
       return <Mail className={className} aria-hidden="true" />;
     case "analytics":
       return <ChartColumn className={className} aria-hidden="true" />;
+    case "seo":
+      return <Search className={className} aria-hidden="true" />;
     case "inbox":
       return <Inbox className={className} aria-hidden="true" />;
     default: {

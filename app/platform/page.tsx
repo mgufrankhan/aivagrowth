@@ -48,15 +48,24 @@ export default function PlatformPage() {
           <h2 className="text-3xl font-semibold tracking-tight text-navy">Practical use cases</h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-muted">
             Use the Self-Service Growth plan when your team wants to operate the agents. The same software powers Fully
-            Managed engagements. The Growth plan includes six live agents, two pilot agents, and the live channels listed
-            below.
+            Managed engagements. The Growth plan includes six live agents and two pilot agents. Website SEO is planned.
+            Live channels are listed below.
           </p>
           <div className="mt-6">
             <ApprovalNote />
           </div>
           <div className="mt-10">
             <h3 className="text-xl font-semibold text-navy">Channels</h3>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-muted">
+              Connect Instagram, Facebook, LinkedIn, and WhatsApp, then review performance and analytics on AIVA
+              Growth.
+            </p>
             <IntegrationGrid />
+            <div className="mt-4">
+              <Button href="/integrations" variant="secondary">
+                See all integrations
+              </Button>
+            </div>
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button href={contactHref(offers.selfService.contactInterest)}>{offers.selfService.ctaLabel}</Button>
@@ -70,8 +79,8 @@ export default function PlatformPage() {
         <Container>
           <h2 className="text-3xl font-semibold tracking-tight text-navy">Agents inside the platform</h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-muted">
-            Six agents are live on the Growth plan. Performance Marketing and WhatsApp are in pilot. Open any card for
-            outputs and safeguards.
+            Six agents are live on the Growth plan. Performance Marketing and WhatsApp are in pilot. Website SEO is
+            planned. Open any card for outputs and safeguards.
           </p>
           <AgentGrid />
         </Container>

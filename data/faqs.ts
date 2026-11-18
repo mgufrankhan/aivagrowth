@@ -22,7 +22,7 @@ export const faqs: Faq[] = [
   {
     question: "What does the $149/month starting price cover?",
     answer:
-      "The Growth plan includes 3 user seats, 5 connected accounts, 1,000 AI assists per month, six live agents (Content, Campaigns, Sales & Leads, Email, Analytics, Unified Inbox), and two pilot agents (Performance Marketing, WhatsApp). LinkedIn, Instagram, Facebook, Gmail, and GA4 are included. Onboarding kickoff is included with a $0 setup fee. Month-to-month billing with 30 days’ notice to cancel.",
+      "The Growth plan includes 3 user seats, 5 connected accounts, 1,000 AI assists per month, six live agents (Content, Campaigns, Sales & Leads, Email, Analytics, Unified Inbox), and two pilot agents (Performance Marketing, WhatsApp). Website SEO is planned and is not part of this package yet. LinkedIn, Instagram, Facebook, Gmail, and GA4 are included. Onboarding kickoff is included with a $0 setup fee. Month-to-month billing with 30 days’ notice to cancel.",
   },
   {
     question: "What does the $799/month starting price cover?",
@@ -37,7 +37,7 @@ export const faqs: Faq[] = [
   {
     question: "Which integrations are available now?",
     answer:
-      "LinkedIn, Instagram, Facebook, Gmail, and Google Analytics 4 are live. WhatsApp Business messaging is in pilot. We confirm account connection steps during onboarding.",
+      "LinkedIn, Instagram, Facebook, Gmail, and Google Analytics 4 are live. WhatsApp, Meta Ads, and Google Ads are in pilot. Connect the accounts you are allowed to use, then review performance and analytics on AIVA Growth. We confirm account connection steps during onboarding.",
   },
   {
     question: "Will AIVA Growth publish or message customers without approval?",

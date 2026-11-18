@@ -36,7 +36,7 @@ export function createShareImage(size = shareImageSize) {
             Your AI Team for Business Growth.
           </div>
           <div style={{ fontSize: 28, color: "#D5E2F7", maxWidth: 860, lineHeight: 1.4 }}>
-            AI virtual agents for content, campaigns, leads, customer conversations, and analytics.
+            AI virtual agents for content, campaigns, leads, website SEO, and analytics.
           </div>
         </div>
       </div>

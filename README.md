@@ -32,7 +32,7 @@ Marketing content lives in typed files under `data/`:
 | File | What it controls |
 | --- | --- |
 | `data/site.ts` | Name, tagline, canonical URL, CTA mode fallback, logo paths, social links |
-| `data/agents.ts` | The eight agents, including detail-page copy and SEO descriptions |
+| `data/agents.ts` | The agents, including detail-page copy and SEO descriptions |
 | `data/faqs.ts` | Homepage questions |
 | `data/integrations.ts` | Channel names and `live`, `beta`, `planned`, or `unavailable` status |
 | `data/workflow.ts` | The four-step flow and the connected workspace |

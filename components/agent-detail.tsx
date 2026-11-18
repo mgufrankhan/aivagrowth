@@ -4,8 +4,29 @@ import { Button } from "@/components/button";
 import { CTASection } from "@/components/cta-section";
 import { PageHeader } from "@/components/page-header";
 import { Section, Container } from "@/components/container";
-import { agentPath, agentReadinessLabel, relatedAgents, type Agent } from "@/data/agents";
+import {
+  agentPath,
+  agentReadinessLabel,
+  relatedAgents,
+  type Agent,
+  type AgentReadiness,
+} from "@/data/agents";
 import { contactHref, offers } from "@/data/offers";
+
+function readinessNote(status: AgentReadiness): string {
+  switch (status) {
+    case "available":
+      return "This agent is live on the Growth plan. Use it in your own workspace, or discuss a managed workflow.";
+    case "pilot":
+      return "This agent is in pilot, with limited support. You can discuss it for Self-Service or a managed workflow.";
+    case "planned":
+      return "This agent is planned. It is not included in the Growth plan yet. You can discuss it when you book a demo.";
+    default: {
+      const exhaustive: never = status;
+      return exhaustive;
+    }
+  }
+}
 
 export function AgentDetail({ agent }: { agent: Agent }) {
   const related = relatedAgents(agent.slug);
@@ -33,10 +54,7 @@ export function AgentDetail({ agent }: { agent: Agent }) {
             <span className="rounded-full bg-blue/10 px-3 py-1 text-xs font-semibold text-navy">
               {agentReadinessLabel(agent.readiness)}
             </span>
-            <p className="text-sm leading-6 text-muted">
-              Use this capability in your own Growth workspace or discuss a managed workflow. Live agents are included
-              in Self-Service Growth; pilot agents are available with limited support.
-            </p>
+            <p className="text-sm leading-6 text-muted">{readinessNote(agent.readiness)}</p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             <article className="rounded-2xl border border-line bg-white p-5">
